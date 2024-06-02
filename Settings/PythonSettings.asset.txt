@@ -5,7 +5,7 @@
         "m_Name": "",
         "m_EditorClassIdentifier": "",
         "m_sitePackages": [
-            "Assets/Editor/HyperEdge/Shared/Python/pysources"
+            "Packages/tech.hyperedgelabs.unity-plugin/Editor/HyperEdge/Shared/Python/pysources"
         ]
     }
 }
