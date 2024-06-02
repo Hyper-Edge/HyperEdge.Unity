@@ -32,18 +32,20 @@ def _ws_listener(ws, queue: multiprocessing.Queue):
             if not msg:
                 continue
             jmsg = json.loads(msg)
+            print(jmsg, flush=True)
             if jmsg['event'] == 'message':
                 job_id = _get_ws_job_id(jmsg.get('subscription'))
-                print(jmsg)
                 if not job_id:
                     assert False
                     continue
                 if 'task' in jmsg['data']:
+                    #print("sending to unity", flush=True)
                     send_to_unity('HeTaskInfo', {
                         'JobId': job_id,
                         'Task': jmsg['data']['task'],
                         'Payload': jmsg['data'].get('payload'),
                     })
+                    #print("sent", flush=True)
                 elif 'status' in jmsg['data']:
                     is_success = jmsg['data']['status'] == 'success'
                     job_data = JobData(job_id=job_id, success=is_success, retval=jmsg['data'].get('retval'))

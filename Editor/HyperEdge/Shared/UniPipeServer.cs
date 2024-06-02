@@ -59,6 +59,7 @@ namespace HyperEdge.Sdk.Unity
             {
                 _listener.Start();
                 _address = _listener.LocalEndpoint.ToString();
+                Debug.Log($"UniPipe listening at {_address}");
                 //
                 while (!ct.IsCancellationRequested)
                 {

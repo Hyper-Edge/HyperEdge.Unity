@@ -11,10 +11,10 @@ namespace HyperEdge.Sdk.Unity
 {
     public class HyperEdgePy
     {
-        const string HePyPath = "/Assets/Editor/HyperEdge/Shared/Python/pysources";
-        const string HeCliPyPath = HePyPath + "/he-cli.py";
-        const string HeWebEditorPath = HePyPath + "/run_dev.py";
-        const string UserPythonScriptsPath = "/Assets/PythonScripts~";
+        static string HePyPath = System.IO.Path.GetFullPath("Packages/tech.hyperedgelabs.unity-plugin/Editor/HyperEdge/Shared/Python/pysources");
+        static string HeCliPyPath = HePyPath + "/he-cli.py";
+        static string HeWebEditorPath = HePyPath + "/run_dev.py";
+        static string UserPythonScriptsPath = "/Assets/PythonScripts~";
 
         public string ProjectName { get; set; } = string.Empty;
         public string ProjectSlug { get => ProjectName.ToLower().Replace(" ", "_").Replace("-", "_"); }
@@ -208,14 +208,17 @@ namespace HyperEdge.Sdk.Unity
         public async UniTask<HePyResult> RunHeAdminPy(IEnumerable<string> argsToHeAdmin)
         {
             var currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            var heAdminPyPath = currentDirectory + HeAdminPyPath;
+            var heAdminPyPath = "\"" + currentDirectory + HeAdminPyPath + "\"";
             var args = new List<string> { heAdminPyPath }.Concat(argsToHeAdmin);
+
+            string argsString = string.Join(" ", args);
+            Debug.Log("Running Python script with arguments: " + argsString);
             //
             using (var pyProc = PythonRunner.SpawnPythonProcess(
                     args,
                     environment: new Dictionary<string, string> {
                         {"UNIPIPE", UniPipeServer.DefaultAddress},
-                        {"HE_SYS_PATH", currentDirectory + HePyPath },
+                        {"HE_SYS_PATH", HePyPath },
                         {"HE_API_KEY", AppBuilderSettings.XApiKey},
                         {"HE_API_URL", HyperEdgeConstants.BackendUrl},
                         {"HE_CERT_PATH", System.IO.Path.GetFullPath("Packages/tech.hyperedgelabs.unity-plugin/Settings/cert.pem")},
@@ -239,15 +242,14 @@ namespace HyperEdge.Sdk.Unity
         public async UniTask<HePyResult> CreateProject(string projectName, string projectDescription = null, string version = null)
         {  
             var currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            var heCliPyPath = currentDirectory + HeCliPyPath;
 
             // Generate the project slug from the project name
             string projectSlug = projectName.ToLower().Replace(" ", "_").Replace("-", "_");
 
             // Build the argument list for the Python script
-            var args = new List<string> { heCliPyPath, /*"create_project",*/
-                "--directory", currentDirectory + HePyPath + "/he-sdk-template~",
-                "--output-dir", currentDirectory + UserPythonScriptsPath,
+            var args = new List<string> { HeCliPyPath, /*"create_project",*/
+                "--directory", HePyPath + "/he-sdk-template~",
+                "--output-dir", "\"" + currentDirectory + UserPythonScriptsPath + "\"",
                 "--extra-context"
             };
 
@@ -262,16 +264,14 @@ namespace HyperEdge.Sdk.Unity
         {
             //
             var currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            var heWebEditorPath = currentDirectory + HeWebEditorPath;
-
-            var args = new List<string> { heWebEditorPath,
-                currentDirectory + "/Assets/PythonScripts~/"
+            var args = new List<string> { "\"" + HeWebEditorPath + "\"",
+                "\"" + currentDirectory + "/Assets/PythonScripts~/\""
             }; 
             //
             return PythonRunner.SpawnPythonProcess(args, redirectOutput: true,
                 environment: new Dictionary<string, string> {
                     {"UNIPIPE", UniPipeServer.DefaultAddress},
-                    {"HE_SYS_PATH", currentDirectory + HePyPath },
+                    {"HE_SYS_PATH", HePyPath },
             });
         }
 
@@ -286,7 +286,7 @@ namespace HyperEdge.Sdk.Unity
             var pyProc = PythonRunner.SpawnPythonProcess(args, redirectOutput: true,
                 environment: new Dictionary<string, string> {
                     {"UNIPIPE", UniPipeServer.DefaultAddress},
-                    {"HE_SYS_PATH", currentDirectory + HePyPath },
+                    {"HE_SYS_PATH", HePyPath },
             });
             if (pyProc != null)
             {
