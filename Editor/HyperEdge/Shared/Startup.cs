@@ -35,11 +35,11 @@ namespace HyperEdge.Sdk.Unity
             //
             if (!File.Exists("ProjectSettings/requirements.txt"))
             {
-                File.Copy("Assets/HyperEdge/Settings/requirements.txt", "ProjectSettings/requirements.txt");
+                File.Copy("Packages/tech.hyperedgelabs.unity-plugin/Settings/requirements.txt", "ProjectSettings/requirements.txt");
             }
             if (!File.Exists("ProjectSettings/PythonSettings.asset"))
             {
-                File.Copy("Assets/HyperEdge/Settings/PythonSettings.asset.txt", "ProjectSettings/PythonSettings.asset");
+                File.Copy("Packages/tech.hyperedgelabs.unity-plugin/Settings/PythonSettings.asset.txt", "ProjectSettings/PythonSettings.asset");
             }
             //
             JsonConvert.DefaultSettings = () => new JsonSerializerSettings
