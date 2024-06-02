@@ -218,7 +218,7 @@ namespace HyperEdge.Sdk.Unity
                         {"HE_SYS_PATH", currentDirectory + HePyPath },
                         {"HE_API_KEY", AppBuilderSettings.XApiKey},
                         {"HE_API_URL", HyperEdgeConstants.BackendUrl},
-                        {"HE_CERT_PATH", currentDirectory + "/Assets/HyperEdge/Settings/cert.pem"},
+                        {"HE_CERT_PATH", System.IO.Path.GetFullPath("Packages/tech.hyperedgelabs.unity-plugin/Settings/cert.pem")},
                         {"HE_ASSETS_PATH", currentDirectory + "/Assets/HyperEdge/" + ProjectName},
                         {"HE_APP_PATH", GetPythonScriptsPath()},
                         {"HE_APP_JSON_PATH", GetPythonScriptsPath() + "/app.json"}

@@ -67,7 +67,7 @@ namespace HyperEdge.Sdk.Unity
                     // keepalive ping time out after 5 seconds, default is 20 seconds
                     new ChannelOption("grpc.keepalive_timeout_ms", 5 * 1000),
                 },
-                new SslCredentials(File.ReadAllText("Assets/HyperEdge/Settings/cert.pem"))
+                new SslCredentials(File.ReadAllText("Packages/tech.hyperedgelabs.unity-plugin/Settings/cert.pem"))
             ));
             GrpcChannelProvider.SetDefaultProvider(_grpcChannelProvider);
             //
