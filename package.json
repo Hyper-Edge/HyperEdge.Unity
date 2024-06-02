@@ -1,0 +1,22 @@
+{
+  "name": "tech.hyperedgelabs.UnityPlugin",
+  "version": "0.0.1",
+  "displayName": "HyperEdge Unity SDK",
+  "description": "Unity Plugin & SDK for HyperEdge platform",
+  "unity": "2022.1",
+  "dependencies": {
+    "com.cysharp.memorypack": "https://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack",
+    "com.cysharp.messagepipe": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.scripting.python": "7.0.1",
+    "com.unity.visualscripting": "1.8.0",
+    "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.15.3"
+  },
+  "keywords": [
+    "HyperEdge",
+    "SDK"
+  ],
+ "samples": []
+}
+

@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using MagicOnion;
+
+using {{namespace}}.Sdk.Server;
+using {{namespace}}.Sdk.Shared;
+using {{namespace}}.Sdk.Shared.Data;
+using {{namespace}}.Sdk.Shared.Protocol;
+using {{namespace}}.Sdk.Shared.Protocol.Models;
+using {{namespace}}.Sdk.Shared.Structs;
+
+
+namespace {{namespace}}.Server
+{
+    public partial class GameService
+    {
+        public async UnaryResult<{{resp_typename}}> {{req_handler_name}}({{req_typename}} req)
+        {
+{{req_handler_code}}
+        }
+    }
+}

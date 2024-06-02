@@ -1,0 +1,30 @@
+{
+    "name": "HyperEdge.Sdk.Unity.APITester",
+    "rootNamespace": "HyperEdge.Sdk.Unity.APITester",
+    "references": [
+        "MagicOnion.Abstractions",
+	    "MagicOnion.Client",
+        "MagicOnion.Unity",
+        "MasterMemory",
+        "MessagePack",
+        "MessagePipe",
+        "MessagePipe.Editor",
+	    "Ulid",
+        "UniTask",
+        "UniTask.Editor",
+        "HyperEdge.Sdk.Shared",
+	    "HyperEdge.Sdk.Unity.Shared",
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

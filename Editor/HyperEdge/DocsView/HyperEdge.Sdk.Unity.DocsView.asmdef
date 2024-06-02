@@ -1,0 +1,21 @@
+{
+    "name": "HyperEdge.Sdk.Unity.DocsView",
+    "rootNamespace": "HyperEdge.Sdk.Unity",
+    "references": [
+        "HyperEdge.Sdk.Unity.Shared",
+        "Ulid",
+        "Unity.VisualScripting.Core",
+        "Unity.VisualScripting.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

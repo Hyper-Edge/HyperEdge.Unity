@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using MagicOnion;
+
+using {{namespace}}.Sdk.Server;
+using {{namespace}}.Sdk.Shared;
+
+
+namespace {{namespace}}.Server
+{
+    public partial class GameService
+    {
+        public IGameContext GameContext { get; private set; }
+        public IGameDb GameDb { get; private set; }
+        public IShopService Shop { get; private set; }
+        public IHEAbilitySystem AbilitySystem { get; private set; }
+    }
+}

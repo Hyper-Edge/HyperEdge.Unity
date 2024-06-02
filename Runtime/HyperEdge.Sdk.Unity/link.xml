@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="HyperEdge.Sdk.Unity">
+    <type fullname="HyperEdge.Sdk.Unity.*" preserve="all"/>
+  </assembly>
+</linker>
+

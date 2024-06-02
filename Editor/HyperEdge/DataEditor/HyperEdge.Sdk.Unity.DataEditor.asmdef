@@ -1,0 +1,21 @@
+{
+    "name": "HyperEdge.Sdk.Unity.DataEditor",
+    "rootNamespace": "HyperEdge.Sdk.Unity.DataEditor",
+    "references": [
+	    "HyperEdge.Sdk.Unity.Shared",
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+        "MessagePack",
+	    "Ulid"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

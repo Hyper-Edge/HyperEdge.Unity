@@ -1,0 +1,19 @@
+{
+    "name": "HyperEdge.Sdk.Server",
+    "rootNamespace": "HyperEdge.Sdk.Server",
+    "references": [
+	"MessagePack",
+	"MessagePack.Annotations",
+	"Ulid"
+    ],
+    "includePlatforms": [
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

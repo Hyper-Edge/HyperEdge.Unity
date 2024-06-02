@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="458bce9e-d24c-43ce-9314-2cfe9e2f0d59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../AppManager/AppBuilderWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../AppManager/AppBuilderWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Client/Protocol/Models/Mechanics/MultiPlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Client/Protocol/Models/Mechanics/MultiPlayerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../AppData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AppData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BackendClient/Protocol/GetAppVersionsResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../BackendClient/Protocol/GetAppVersionsResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flaskcode/static/img/logo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../flaskcode/static/img/logo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../he-cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../he-cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../he-sdk-template.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metatools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/metatools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metatools/turnbattler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metatools/turnbattler.py.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../HyperEdge/hi1/ServerScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../HyperEdge/hi1/ServerScripts/Handlers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../HyperEdge/hi1/ServerScripts/Handlers/TestHandler.hcs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../HyperEdge/hi1/ServerScripts/Handlers/TestHandler.hcs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../../ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../../../ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../../ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../../../ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../../../.." />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/sdk.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+        <option value="$PROJECT_DIR$/.idea/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2fg2Wko6eadGhKo4W6FAIO1Fx9p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="458bce9e-d24c-43ce-9314-2cfe9e2f0d59" name="Default Changelist" comment="" />
+      <created>1714208433984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714208433984</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

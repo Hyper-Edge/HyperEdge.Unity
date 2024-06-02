@@ -1,0 +1,25 @@
+{
+    "name": "HyperEdge.Sdk.Unity.Shared",
+    "rootNamespace": "HyperEdge.Sdk.Unity",
+    "references": [
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+	    "Ulid",
+        "MagicOnion.Unity",
+        "MessagePack",
+        "MessagePipe",
+	    "Unity.Scripting.Python.Editor",
+        "UniTask",
+        "UniTask.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

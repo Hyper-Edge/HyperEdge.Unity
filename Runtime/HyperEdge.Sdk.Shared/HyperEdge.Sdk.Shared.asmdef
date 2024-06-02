@@ -1,0 +1,21 @@
+{
+    "name": "HyperEdge.Sdk.Shared",
+    "rootNamespace": "HyperEdge.Sdk.Shared",
+    "references": [
+	"MagicOnion.Abstractions",
+	"MagicOnion.Unity",
+	"MessagePack",
+	"MessagePack.Annotations",
+	"Ulid"
+    ],
+    "includePlatforms": [
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

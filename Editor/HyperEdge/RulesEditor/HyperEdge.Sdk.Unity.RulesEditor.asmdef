@@ -1,0 +1,22 @@
+{
+    "name": "HyperEdge.Sdk.Unity.RulesEditor",
+    "rootNamespace": "HyperEdge.Sdk.Unity.RulesEditor",
+    "references": [
+	    "HyperEdge.Sdk.Unity.Shared",
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+	    "Ulid",
+        "UniTask",
+        "UniTask.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

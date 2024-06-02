@@ -1,0 +1,23 @@
+{
+    "name": "HyperEdge.Sdk.Unity.EntityEditor",
+    "rootNamespace": "HyperEdge.Sdk.Unity.EntityEditor",
+    "references": [
+	    "HyperEdge.Sdk.Unity.Shared",
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+	    "MessagePipe",
+        "Ulid",
+        "UniTask",
+        "UniTask.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

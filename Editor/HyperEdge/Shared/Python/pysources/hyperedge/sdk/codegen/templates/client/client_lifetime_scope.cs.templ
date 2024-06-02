@@ -1,0 +1,16 @@
+using System;
+using VContainer;
+using VContainer.Unity;
+
+
+namespace {{namespace}}.Client
+{
+    public partial class ClientLifetimeScope : LifetimeScope
+    {
+        protected override void Configure(IContainerBuilder builder)
+        {
+            builder.Register<BaseController>(Lifetime.Singleton);
+        }
+    }
+}
+
