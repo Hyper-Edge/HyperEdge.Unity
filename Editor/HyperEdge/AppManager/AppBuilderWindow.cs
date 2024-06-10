@@ -828,7 +828,7 @@ namespace HyperEdge.Sdk.Unity
 
         private bool IsSdkMissing()
         {
-            var sdkComponents = new string[] {"Sdk.Shared", "Sdk.Server", "Sdk.NodeFlows", "UnityClient", "NetPlay"};
+            var sdkComponents = new string[] {"Sdk.Shared", "Sdk.Server", "Sdk.NodeFlows", "UnityClient"/*, "NetPlay"*/};
             foreach (var component in sdkComponents)
             {
                 var tgtDirname = $"Assets/Scripts/{_appData.Name}.{component}";
@@ -951,7 +951,7 @@ namespace HyperEdge.Sdk.Unity
                 ( appVersionData.Files.SdkNodeFlowsFileId, "Sdk.NodeFlows" ),
                 ( appVersionData.Files.UnityClientFileId, "UnityClient" ),
                 ( appVersionData.Files.TurnBattlerFileId, "TurnBattler" ),
-                ( appVersionData.Files.NetPlayFileId, "NetPlay" ),
+                //( appVersionData.Files.NetPlayFileId, "NetPlay" ),
             };
             //
             for (int i = 0; i < sdkComponents.Length; i++)

@@ -49,6 +49,7 @@ namespace HyperEdge.Sdk.Unity
             //
             var msgPackResolver = MessagePack.Resolvers.CompositeResolver.Create(
                 Cysharp.Serialization.MessagePack.UlidMessagePackResolver.Instance,
+                MessagePack.Resolvers.GeneratedResolver.Instance,
                 MessagePack.Resolvers.StandardResolver.Instance);
 
             var msgPackoptions = MessagePackSerializerOptions.Standard.WithResolver(msgPackResolver);
