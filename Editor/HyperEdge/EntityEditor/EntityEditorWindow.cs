@@ -55,6 +55,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
 
         private List<DataClassDTO> _newDataClass = new();
 
+        private int _dataClassIdx = -1;
         private int _modelClassIdx = 0;
 
         private int _bpIdx = 0;
@@ -167,6 +168,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 _helpers.Add(new DataClassEditHelper(_appDef, null));
                 _newDataClass.Add(new DataClassDTO());
             }
+            _dataClassIdx = -1;
         }
 
         private void OnAppDefLoaded(OnAppDefLoadedMsg msg)
@@ -250,7 +252,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 {
                     if (GUILayout.Button("Create GameData"))
                     {
-                        CreateNewDataClass(_newDataClass[0]).Forget();
+                        CreateNewDataClass(_newDataClass[0], false).Forget();
                     }
                 }
                 else if (_newGmStructTypeIdx == (int)GmStructType.MODEL)
@@ -296,15 +298,21 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             {
                 if (_newGmStructTypeIdx == (int)GmStructType.STATIC_DATA)
                 {
-                    var modelClassNames = _appDef.Data.DataClasses.Select(v => v.Name).ToArray();
-                    _modelClassIdx = EditorGUILayout.Popup(_modelClassIdx, modelClassNames);
-                    var modelClass = _appDef.Data.DataClasses[_modelClassIdx];
-                    _helpers[0].SetDataClass(modelClass);
+                    var dataClassNames = _appDef.Data.DataClasses.Select(v => v.Name).ToArray();
+                    var dataClassIdx = EditorGUILayout.Popup(_dataClassIdx, dataClassNames);
+                    if (dataClassIdx != _dataClassIdx)
+                    {
+                        var dataClass = _appDef.Data.DataClasses[dataClassIdx];
+                        _newDataClass[0] = dataClass.Clone();
+                        _helpers[0].SetDataClass(_newDataClass[0]);
+                        _dataClassIdx = dataClassIdx;
+                    }
                     _helpers[0].RenderDataClassEditGUI(); 
                     //
                     EditorGUILayout.Space();
                     if (GUILayout.Button("Update"))
                     {
+                        UpdateNewDataClass(_newDataClass[0]).Forget();
                     }
                 }
                 else if (_newGmStructTypeIdx == (int)GmStructType.MODEL)
@@ -576,12 +584,17 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }  
         }
 
-        private async UniTask<bool> CreateNewDataClass(DataClassDTO dataClass)
+        private UniTask<bool> UpdateNewDataClass(DataClassDTO dataClass)
+        {
+            return CreateNewDataClass(dataClass, true);
+        }
+
+        private async UniTask<bool> CreateNewDataClass(DataClassDTO dataClass, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewDataClassImpl(dataClass);
+                return await CreateNewDataClassImpl(dataClass, update);
             }
             finally
             {
@@ -589,14 +602,16 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewDataClassImpl(DataClassDTO dataClass)
+        private async UniTask<bool> CreateNewDataClassImpl(DataClassDTO dataClass, bool update)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateDataClass(dataClass.Name, String.Join(',', fldsArray));
+            var pyRet = await _py.CreateDataClass(dataClass.Name, String.Join(',', fldsArray), update);
+            string actionName = update ? "update" : "create";
             if (!pyRet.IsSuccess)
             {
-                EditorUtility.DisplayDialog("HyperEdge", $"Failed to create DataClass \"{name}\"", "Ok");
+                EditorUtility.DisplayDialog("HyperEdge", $"Failed to {actionName} DataClass \"{name}\"", "Ok");
             }
+            EditorUtility.DisplayDialog("HyperEdge", $"Successfully {actionName}d DataClass \"{name}\"", "Ok");
             return pyRet.IsSuccess;
         }
 

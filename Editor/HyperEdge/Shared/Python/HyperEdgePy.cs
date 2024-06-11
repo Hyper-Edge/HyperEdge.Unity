@@ -92,11 +92,15 @@ namespace HyperEdge.Sdk.Unity
             return await RunHeAdminPy(new string[] { "stop", versionName, envName });
         }
 
-        public async UniTask<HePyResult> CreateDataClass(string name, string flds)
+        public async UniTask<HePyResult> CreateDataClass(string name, string flds, bool update)
         {
-            var args = new string[] { "create-dataclass", name,
+            var args = new List<string> { "create-dataclass", name,
                 "--fields", flds };
-            return await RunHeAdminPy(args);
+            if (update)
+            {
+                args.Add("--update");
+            }
+            return await RunHeAdminPy(args.ToArray());
         }
 
         public async UniTask<HePyResult> CreateModelClass(string name, string dataFlds, string modelFlds)

@@ -14,6 +14,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
     {
         private AppDef? _appDef = null;
         private DataClassDTO? _dataClass = null;
+        public DataClassDTO? DataClass { get => _dataClass; }
         //
         private List<int> _selectedTypeIdxs = new();
         private string[] _availableTypeNames;
@@ -105,6 +106,10 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
 
         public void RenderDataClassEditGUI()
         {
+            if (_dataClass is null)
+            {
+                return;
+            }
             EditorGUILayout.LabelField("Class Name:");
             _dataClass.Name = EditorGUILayout.TextField(_dataClass.Name);
             EditorGUILayout.Space();

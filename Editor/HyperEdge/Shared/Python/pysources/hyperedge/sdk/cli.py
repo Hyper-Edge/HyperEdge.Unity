@@ -147,8 +147,8 @@ def convert_llm_thread_to_app_def(ctx: typer.Context, ai_thread_id: str):
     ctx.obj.convert_llm_thread_to_app_def(ai_thread_id)
 
 
-def _write_py_file(p, s):
-    if p.exists():
+def _write_py_file(p, s, update=False):
+    if p.exists() and not update:
         raise Exception(f"File {str(p)} already exists")
     #
     if not p.parent.exists():
@@ -173,25 +173,27 @@ def _output_fields(fields):
 @cli_app.command()
 def create_dataclass(ctx: typer.Context,
                   name: str = typer.Argument(..., help="Name of the Dataclass"), 
-                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields')):
+                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields'),
+                  update: Optional[bool] = typer.Option(False, "--update", help='Update existing dataclass')):
     """
     Create a new data class, provided with <name> and <fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
     fname = inflection.underscore(name)
+    cls_name = name if update else '{inflection.camelize(name)}Data'
     fpath = ctx.obj.get_models_paths().joinpath('data', f'{fname}.py')
     #
     s = f"""from hyperedge.sdk.models import BaseData, DataRef
 from hyperedge.sdk.models.types import *
 
 
-class {inflection.camelize(name)}Data(BaseData):
+class {cls_name}(BaseData):
 """
     if not fields:
         fields = "Name:str"
     #
     s += _output_fields(fields)
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 

@@ -12,6 +12,12 @@ namespace HyperEdge.Shared.Protocol.Models.Export
         public string Name { get; set; }
         public string Base { get; set; }
         public List<DataClassFieldDTO> Fields { get; set; } = new();
+
+        public DataClassDTO Clone()
+        {
+            var bs = MessagePackSerializer.Serialize(this);
+            return MessagePackSerializer.Deserialize<DataClassDTO>(bs);
+        }
     }
 
     [MessagePackObject(true)]
