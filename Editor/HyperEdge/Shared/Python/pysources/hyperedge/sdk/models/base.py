@@ -1,5 +1,8 @@
+import os
+import pathlib
 from pydantic import BaseModel
 import six
+import sys
 
 from .types import get_cs_type, Ulid
 
@@ -41,6 +44,15 @@ class _BaseModel(six.with_metaclass(_BaseModelMeta, BaseModel)):
         return cls._nft
 
     @classmethod
+    def get_file(cls):
+        app_path = pathlib.Path(os.environ['HE_APP_PATH'])
+        fpath = pathlib.Path(sys.modules[cls.__module__].__file__)
+        if fpath.is_relative_to(app_path):
+            return str(fpath.relative_to(app_path))
+        else:
+            return ''
+
+    @classmethod
     def base(cls, b_cls):
         found_data_model = False
         for p_cls in reversed(cls.__mro__):
@@ -60,6 +72,7 @@ class _BaseModel(six.with_metaclass(_BaseModelMeta, BaseModel)):
             flds.append({'Name': fname, 'Typename': get_cs_type(fdef.outer_type_)})
         return dict(
             Name=cls.__name__,
+            FilePath=cls.get_file(),
             Fields=flds
         )
 

@@ -200,7 +200,8 @@ class {cls_name}(BaseData):
 @cli_app.command()
 def create_struct(ctx: typer.Context, 
                   name: str = typer.Argument(..., help="Name of the Struct"), 
-                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields')):
+                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields'),
+                  update: Optional[bool] = typer.Option(False, "--update", help='Update existing struct')):
     """
     Create a new struct class, provided with <name> and <fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
@@ -216,14 +217,15 @@ class {st_name}(_BaseModel):
 """
     s += _output_fields(fields)
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 
 @cli_app.command()
 def create_event(ctx: typer.Context,
                  name: str = typer.Argument(..., help="Name of the Event Class"), 
-                 fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields')):
+                 fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields'),
+                 update: Optional[bool] = typer.Option(False, "--update", help='Update existing event struct')):
     """
     Create a new event class, provided with <name> and <fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
@@ -239,7 +241,7 @@ class {st_name}(BaseEvent):
 """
     s += _output_fields(fields)
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 
@@ -247,7 +249,8 @@ class {st_name}(BaseEvent):
 def create_model(ctx: typer.Context,
                  name: str = typer.Argument(..., help="Name of the Model"),
                  data_fields: Optional[str] = typer.Option(..., "--data-fields", help='Custom static Data fields'),
-                 model_fields: Optional[str] = typer.Option(..., "--model-fields", help='Custom Model fields')):
+                 model_fields: Optional[str] = typer.Option(..., "--model-fields", help='Custom Model fields'),
+                 update: Optional[bool] = typer.Option(False, "--update", help='Update existing Model')):
     """
     Create a new data model, provided with <name>, <data_fields>, and <model_fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
@@ -274,7 +277,7 @@ class {entity_name}(DataModel):
     Data: DataRef[{entity_name}Data]
 """
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 
@@ -331,7 +334,9 @@ class {inflection.camelize(name)}(UserGroup):
 def create_energy_system(ctx: typer.Context,
                          name: str = typer.Argument(..., help="Name of the Energy System"),
 			 data_fields: Optional[str] = typer.Option(..., '--data-fields', help="Custom fields for energy system static data"),
-			 model_fields: Optional[str] = typer.Option(..., '--model-fields', help="Custom fields for energy system model")):
+			 model_fields: Optional[str] = typer.Option(..., '--model-fields', help="Custom fields for energy system model"),
+             update: Optional[bool] = typer.Option(False, "--update", help='Update existing EnergySystem')):
+
     """
     Create energy system
     """
@@ -366,7 +371,7 @@ class {es_name}EnergySystemModel(DataModel):
         s += f", Model={es_name}EnergySystemModel"
     s += ")"
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 
@@ -527,7 +532,8 @@ def create_battlepass(ctx: typer.Context,
                   name: str = typer.Argument(..., help="Name of the BattlePass"), 
                   data_fields: Optional[str] = typer.Option(None, '--data-fields', help='Custom Fields'),
                   level_data_fields: Optional[str] = typer.Option(None, '--level-data-fields', help='Custom Fields'),
-                  model_fields: Optional[str] = typer.Option(None, '--model-fields', help='Custom Fields')):
+                  model_fields: Optional[str] = typer.Option(None, '--model-fields', help='Custom Fields'),
+                  update: Optional[bool] = typer.Option(False, "--update", help='Update existing event BattlePass')):
     """
     Create a BattlePass.
     """
@@ -572,7 +578,7 @@ class {bp_name}BattlePassModel(DataModel):
         s += f", Model={bp_name}BattlePassModel"
     s += ")"
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 
@@ -581,7 +587,8 @@ def create_tournament(
                   ctx: typer.Context,
                   name: str = typer.Argument(..., help="Name of the BattlePass"), 
                   data_fields: Optional[str] = typer.Option(None, '--data-fields', help='Custom Fields'),
-                  model_fields: Optional[str] = typer.Option(None, '--model-fields', help='Custom Fields')):
+                  model_fields: Optional[str] = typer.Option(None, '--model-fields', help='Custom Fields'),
+                  update: Optional[bool] = typer.Option(False, "--update", help='Update existing event Tournament/LeaderBoard')):
     """
     Create a Tournament.
     """
@@ -618,7 +625,7 @@ class {bp_name}TournamentModel(DataModel):
         s += f", Model={bp_name}TournamentModel"
     s += ")"
     #
-    _write_py_file(fpath, s)
+    _write_py_file(fpath, s, update)
     ctx.obj.export_current(False)
 
 

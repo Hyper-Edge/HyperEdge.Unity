@@ -60,6 +60,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
 
         private int _bpIdx = 0;
         private int _esIdx = 0;
+        private int _lbIdx = 0;
 
         private int _rhIdx = 0;        
         private int _rhReqStIdx = 0;
@@ -272,7 +273,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 {
                     if (GUILayout.Button("Create struct"))
                     {
-                        CreateNewStruct(_newDataClass[0]).Forget();
+                        CreateNewStruct(_newDataClass[0], false).Forget();
                     }
                 }
                 else if (_newGmStructTypeIdx == (int)GmStructType.STORAGE)
@@ -282,14 +283,14 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                     _selectedStorageTypeIdx = EditorGUILayout.Popup(_selectedStorageTypeIdx, _gm_storage_types);
                     if (GUILayout.Button("Create Storage"))
                     {
-                        CreateNewStorageClass(_newDataClass[0], _gm_storage_types[_selectedStorageTypeIdx]).Forget();
+                        CreateNewStorageClass(_newDataClass[0], _gm_storage_types[_selectedStorageTypeIdx], false).Forget();
                     }
                 }
                 else if (_newGmStructTypeIdx == (int)GmStructType.EVENT)
                 {
                     if (GUILayout.Button("Create Event"))
                     {
-                        CreateNewEventClass(_newDataClass[0]).Forget();
+                        CreateNewEventClass(_newDataClass[0], false).Forget();
                     }
                 }
                 GUI.enabled = true;
@@ -337,8 +338,32 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                     _helpers[0].RenderDataClassEditGUI(); 
                     //
                     EditorGUILayout.Space();
-                    if (GUILayout.Button("Update"))
+                    if (GUILayout.Button("Update Struct"))
                     {
+                        CreateNewStruct(_newDataClass[0], true).Forget();
+                    }
+                }
+                else if (_newGmStructTypeIdx == (int)GmStructType.STORAGE)
+                {
+                    //
+                    EditorGUILayout.Space();
+                    if (GUILayout.Button("Update Event Struct"))
+                    {
+                        CreateNewStorageClass(_newDataClass[0], _gm_storage_types[_selectedStorageTypeIdx], true).Forget();
+                    }
+                }
+                else if (_newGmStructTypeIdx == (int)GmStructType.EVENT)
+                {
+                    var modelClassNames = _appDef.Data.EventClasses.Select(v => v.Name).ToArray();
+                    _modelClassIdx = EditorGUILayout.Popup(_modelClassIdx, modelClassNames);
+                    var modelClass = _appDef.Data.StructClasses[_modelClassIdx];
+                    _helpers[0].SetDataClass(modelClass);
+                    _helpers[0].RenderDataClassEditGUI(); 
+                    //
+                    EditorGUILayout.Space();
+                    if (GUILayout.Button("Update Event Struct"))
+                    {
+                        CreateNewEventClass(_newDataClass[0], true).Forget();
                     }
                 }
             }
@@ -370,19 +395,47 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 GUI.enabled = !TaskInProgress;
                 if (GUILayout.Button("Create BattlePass"))
                 {
-                    CreateNewBattlePass(_newBpName, _newDataClass[0], _newDataClass[1], _newDataClass[2]).Forget();
+                    CreateNewBattlePass(_newBpName, _newDataClass[0], _newDataClass[1], _newDataClass[2], false).Forget();
                 }
                 GUI.enabled = true;
             }
             else if (_actionIdx == (int)EditorAction.EDIT)
             {
                 var bpNames = _appDef.Data.BattlePasses.Select(v => v.Name).ToArray();
-                _bpIdx = EditorGUILayout.Popup(_bpIdx, bpNames);
-                var bpData = _appDef.Data.BattlePasses[_bpIdx];
+                var bpIdx = EditorGUILayout.Popup(_bpIdx, bpNames);
+                if (bpIdx != _bpIdx)
+                {
+                    var bpData = _appDef.Data.BattlePasses[_bpIdx];
+                    //
+                    _newDataClass[0] = new DataClassDTO();
+                    _newDataClass[0].Fields = bpData.Data.Clone().Fields;
+                    _helpers[0].SetDataClass(_newDataClass[0]);
+                    //
+                    _newDataClass[1] = new DataClassDTO();
+                    _newDataClass[1].Fields = bpData.LadderLevelData.Clone().Fields;
+                    _helpers[1].SetDataClass(_newDataClass[1]);
+                    //
+                    _newDataClass[2] = new DataClassDTO();
+                    _newDataClass[2].Fields = bpData.Model.Clone().Fields;
+                    _helpers[2].SetDataClass(_newDataClass[2]);
+                    //
+                    _bpIdx = bpIdx;
+                }
+                //
                 EditorGUILayout.LabelField("Static data:");
+                _helpers[0].RenderDataClassEditGUI();
                 EditorGUILayout.Space();
+                _helpers[1].RenderDataClassEditGUI();
                 EditorGUILayout.LabelField("Model fields:");
+                _helpers[2].RenderDataClassEditGUI();
                 EditorGUILayout.Space();
+                //
+                GUI.enabled = !TaskInProgress;
+                if (GUILayout.Button("Update BattlePass"))
+                {
+                    CreateNewBattlePass(_newBpName, _newDataClass[0], _newDataClass[1], _newDataClass[2], true).Forget();
+                }
+                GUI.enabled = true;
             }
         }
 
@@ -407,19 +460,42 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 GUI.enabled = !TaskInProgress;
                 if (GUILayout.Button("Create EnergySystem"))
                 {
-                    CreateNewEnergySystem(_newEsName, _newDataClass[0], _newDataClass[1]).Forget();
+                    CreateNewEnergySystem(_newEsName, _newDataClass[0], _newDataClass[1], false).Forget();
                 }
                 GUI.enabled = true;
             }
             else if (_actionIdx == (int)EditorAction.EDIT)
             {
                 var esNames = _appDef.Data.EnergySystems.Select(v => v.Name).ToArray();
-                _esIdx = EditorGUILayout.Popup(_esIdx, esNames);
-                var esData = _appDef.Data.EnergySystems[_esIdx];
+                var esIdx = EditorGUILayout.Popup(_esIdx, esNames);
+                if (esIdx != _esIdx)
+                {
+                    var esData = _appDef.Data.EnergySystems[_esIdx];
+                    //
+                    _newDataClass[0] = new DataClassDTO();
+                    _newDataClass[0].Fields = esData.Model.Fields;
+                    _helpers[0].SetDataClass(_newDataClass[0]);
+                    //
+                    _newDataClass[1] = new DataClassDTO();
+                    _newDataClass[1].Fields = esData.Data.Fields;
+                    _helpers[1].SetDataClass(_newDataClass[1]);
+                    //
+                    _esIdx = esIdx;
+                }
                 EditorGUILayout.LabelField("Dynamic fields:");
+                _helpers[0].RenderDataClassEditGUI();
                 EditorGUILayout.Space();
+                //
                 EditorGUILayout.LabelField("Static data fields:");
+                _helpers[1].RenderDataClassEditGUI();
                 EditorGUILayout.Space();
+                //
+                GUI.enabled = !TaskInProgress;
+                if (GUILayout.Button("Update EnergySystem"))
+                {
+                    CreateNewEnergySystem(_newEsName, _newDataClass[0], _newDataClass[1], true).Forget();
+                }
+                GUI.enabled = true;
             }
         }
 
@@ -503,7 +579,42 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 GUI.enabled = !TaskInProgress;
                 if (GUILayout.Button("Create Tournament"))
                 {
-                    CreateNewTournament(_newTournamentName, _newDataClass[0], _newDataClass[1]).Forget();
+                    CreateNewTournament(_newTournamentName, _newDataClass[0], _newDataClass[1], false).Forget();
+                }
+                GUI.enabled = true;
+            }
+            else if (_actionIdx == (int)EditorAction.EDIT)
+            {
+
+                var lbNames = _appDef.Data.Tournaments.Select(v => v.Name).ToArray();
+                var lbIdx = EditorGUILayout.Popup(_lbIdx, lbNames);
+                if (lbIdx != _lbIdx)
+                {
+                    var lbData = _appDef.Data.Tournaments[_lbIdx];
+                    //
+                    _newDataClass[0] = new DataClassDTO();
+                    _newDataClass[0].Fields = lbData.Data.Fields;
+                    _helpers[0].SetDataClass(_newDataClass[0]);
+                    //
+                    _newDataClass[1] = new DataClassDTO();
+                    _newDataClass[1].Fields = lbData.Model.Fields;
+                    _helpers[1].SetDataClass(_newDataClass[1]);
+                    //
+                    _lbIdx = lbIdx;
+                }
+                //
+                EditorGUILayout.LabelField("Static data fields:");
+                _helpers[0].RenderDataClassEditGUI();
+                EditorGUILayout.Space();
+                //
+                EditorGUILayout.LabelField("Dynamic fields:");
+                _helpers[1].RenderDataClassEditGUI();
+                EditorGUILayout.Space();
+                //
+                GUI.enabled = !TaskInProgress;
+                if (GUILayout.Button("Update Tournament"))
+                {
+                    CreateNewTournament(_newTournamentName, _newDataClass[0], _newDataClass[1], true).Forget();
                 }
                 GUI.enabled = true;
             }
@@ -609,9 +720,9 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             string actionName = update ? "update" : "create";
             if (!pyRet.IsSuccess)
             {
-                EditorUtility.DisplayDialog("HyperEdge", $"Failed to {actionName} DataClass \"{name}\"", "Ok");
+                EditorUtility.DisplayDialog("HyperEdge", $"Failed to {actionName} DataClass \"{dataClass.Name}\"", "Ok");
             }
-            EditorUtility.DisplayDialog("HyperEdge", $"Successfully {actionName}d DataClass \"{name}\"", "Ok");
+            EditorUtility.DisplayDialog("HyperEdge", $"Successfully {actionName}d DataClass \"{dataClass.Name}\"", "Ok");
             return pyRet.IsSuccess;
         }
 
@@ -643,12 +754,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             return pyRet.IsSuccess;
         }
 
-        private async UniTask<bool> CreateNewStruct(DataClassDTO dataClass)
+        private async UniTask<bool> CreateNewStruct(DataClassDTO dataClass, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewStructImpl(dataClass);
+                return await CreateNewStructImpl(dataClass, update);
             }
             finally
             {
@@ -656,10 +767,10 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewStructImpl(DataClassDTO dataClass)
+        private async UniTask<bool> CreateNewStructImpl(DataClassDTO dataClass, bool update)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateStruct(dataClass.Name, String.Join(',', fldsArray));
+            var pyRet = await _py.CreateStruct(dataClass.Name, String.Join(',', fldsArray), update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create struct \"{name}\"", "Ok");
@@ -667,12 +778,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             return pyRet.IsSuccess;
         }
 
-        private async UniTask<bool> CreateNewStorageClass(DataClassDTO dataClass, string storageType)
+        private async UniTask<bool> CreateNewStorageClass(DataClassDTO dataClass, string storageType, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewStorageClassImpl(dataClass, storageType);
+                return await CreateNewStorageClassImpl(dataClass, storageType, update);
             }
             finally
             {
@@ -680,10 +791,14 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewStorageClassImpl(DataClassDTO dataClass, string storageType)
+        private async UniTask<bool> CreateNewStorageClassImpl(DataClassDTO dataClass, string storageType, bool update)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateStorageClass(dataClass.Name, storageType, String.Join(',', fldsArray));
+            var pyRet = await _py.CreateStorageClass(
+                dataClass.Name,
+                storageType,
+                String.Join(',', fldsArray),
+                update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create Storage \"{name}\" of type {storageType}", "Ok");
@@ -691,12 +806,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             return pyRet.IsSuccess;
         }
 
-        private async UniTask<bool> CreateNewEventClass(DataClassDTO dataClass)
+        private async UniTask<bool> CreateNewEventClass(DataClassDTO dataClass, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewEventClassImpl(dataClass);
+                return await CreateNewEventClassImpl(dataClass, update);
             }
             finally
             {
@@ -704,10 +819,10 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewEventClassImpl(DataClassDTO dataClass)
+        private async UniTask<bool> CreateNewEventClassImpl(DataClassDTO dataClass, bool update)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateEventClass(dataClass.Name, String.Join(',', fldsArray));
+            var pyRet = await _py.CreateEventClass(dataClass.Name, String.Join(',', fldsArray), update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create event \"{name}\"", "Ok");
@@ -739,12 +854,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             return pyRet.IsSuccess;
         }
 
-        private async UniTask<bool> CreateNewEnergySystem(string name, DataClassDTO dataClass, DataClassDTO modelClass)
+        private async UniTask<bool> CreateNewEnergySystem(string name, DataClassDTO dataClass, DataClassDTO modelClass, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewEnergySystemImpl(name, dataClass, modelClass);
+                return await CreateNewEnergySystemImpl(name, dataClass, modelClass, update);
             }
             finally
             {
@@ -752,11 +867,11 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewEnergySystemImpl(string name, DataClassDTO dataClass, DataClassDTO modelClass)
+        private async UniTask<bool> CreateNewEnergySystemImpl(string name, DataClassDTO dataClass, DataClassDTO modelClass, bool update)
         {
             var dataFldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
             var modelFldsArray = modelClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateEnergySystem(name, String.Join(',', dataFldsArray), String.Join(',', modelFldsArray));
+            var pyRet = await _py.CreateEnergySystem(name, String.Join(',', dataFldsArray), String.Join(',', modelFldsArray), update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create EnergySystem \"{name}\"", "Ok");
@@ -768,12 +883,13 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 string name,
                 DataClassDTO dataClass,
                 DataClassDTO levelDataClass,
-                DataClassDTO modelClass)
+                DataClassDTO modelClass,
+                bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewBattlePassImpl(name, dataClass, levelDataClass, modelClass);
+                return await CreateNewBattlePassImpl(name, dataClass, levelDataClass, modelClass, update);
             }
             finally
             {
@@ -785,7 +901,8 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 string name,
                 DataClassDTO dataClass,
                 DataClassDTO levelDataClass,
-                DataClassDTO modelClass)
+                DataClassDTO modelClass,
+                bool update)
         {
             var dataFldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
             var levelDataFldsArray = levelDataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
@@ -793,7 +910,8 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             var pyRet = await _py.CreateBattlePass(name,
                 String.Join(',', dataFldsArray),
                 String.Join(',', levelDataFldsArray),
-                String.Join(',', modelFldsArray));
+                String.Join(',', modelFldsArray),
+                update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create BattlePass \"{name}\"", "Ok");
@@ -801,12 +919,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             return pyRet.IsSuccess;
         }
 
-        private async UniTask<bool> CreateNewTournament(string name, DataClassDTO dataClass, DataClassDTO modelClass)
+        private async UniTask<bool> CreateNewTournament(string name, DataClassDTO dataClass, DataClassDTO modelClass, bool update)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewTournamentImpl(name, dataClass, modelClass);
+                return await CreateNewTournamentImpl(name, dataClass, modelClass, update);
             }
             finally
             {
@@ -814,11 +932,15 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewTournamentImpl(string name, DataClassDTO dataClass, DataClassDTO modelClass)
+        private async UniTask<bool> CreateNewTournamentImpl(
+            string name,
+            DataClassDTO dataClass,
+            DataClassDTO modelClass,
+            bool update)
         {
             var dataFldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
             var modelFldsArray = modelClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateTournament(name, String.Join(',', dataFldsArray), String.Join(',', modelFldsArray));
+            var pyRet = await _py.CreateTournament(name, String.Join(',', dataFldsArray), String.Join(',', modelFldsArray), update);
             if (!pyRet.IsSuccess)
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Failed to create tournament \"{name}\"", "Ok");

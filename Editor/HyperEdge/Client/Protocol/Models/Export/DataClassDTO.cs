@@ -11,6 +11,7 @@ namespace HyperEdge.Shared.Protocol.Models.Export
         public Ulid Id { get; set; }
         public string Name { get; set; }
         public string Base { get; set; }
+        public string FilePath { get; set; }
         public List<DataClassFieldDTO> Fields { get; set; } = new();
 
         public DataClassDTO Clone()
@@ -31,6 +32,12 @@ namespace HyperEdge.Shared.Protocol.Models.Export
     [MessagePackObject(true)]
     public class DataClassFieldsDTO
     {
-        public List<ContractFieldDTO> Fields { get; set; } = new();
+        public List<DataClassFieldDTO> Fields { get; set; } = new();
+
+        public DataClassFieldsDTO Clone()
+        {
+            var bs = MessagePackSerializer.Serialize(this);
+            return MessagePackSerializer.Deserialize<DataClassFieldsDTO>(bs);
+        }
     }
 }

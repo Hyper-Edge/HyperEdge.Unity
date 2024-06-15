@@ -17,7 +17,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
         public DataClassDTO? DataClass { get => _dataClass; }
         //
         private List<int> _selectedTypeIdxs = new();
-        private string[] _availableTypeNames;
+        private List<string> _availableTypeNames = new();
         private Dictionary<string, int> _typeName2Idx = new();
         //
         private string _newFieldName = "";
@@ -85,8 +85,8 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             {
                 l.Add(stData.Name);
             }
-            _availableTypeNames = l.ToArray();
-            for (int i = 0; i < _availableTypeNames.Length; i++)
+            _availableTypeNames = l;
+            for (int i = 0; i < _availableTypeNames.Count; i++)
             {
                 _typeName2Idx[_availableTypeNames[i]] = i;
             }
@@ -100,7 +100,17 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
             foreach (var fldData in _dataClass.Fields)
             {
-                _selectedTypeIdxs.Add(_typeName2Idx[fldData.Typename]);
+                if (_typeName2Idx.TryGetValue(fldData.Typename, out var typeIdx))
+                {
+                    _selectedTypeIdxs.Add(typeIdx);
+                }
+                else
+                {
+                    _availableTypeNames.Add(fldData.Typename);
+                    typeIdx = _availableTypeNames.Count - 1;
+                    _typeName2Idx[fldData.Typename] = typeIdx;
+                    _selectedTypeIdxs.Add(typeIdx);
+                }
             }
         }
 
@@ -113,7 +123,11 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             EditorGUILayout.LabelField("Class Name:");
             _dataClass.Name = EditorGUILayout.TextField(_dataClass.Name);
             EditorGUILayout.Space();
-
+            if (!string.IsNullOrEmpty(_dataClass.FilePath))
+            {
+                EditorGUILayout.LabelField($"File Path: {_dataClass.FilePath}");
+                EditorGUILayout.Space();
+            }
             EditorGUILayout.LabelField("Fields:");
             // Display existing _dataClass.Fields
             for (int i = 0; i < _dataClass.Fields.Count; i++)
@@ -122,7 +136,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 // Attribute name
                 _dataClass.Fields[i].Name = EditorGUILayout.TextField(_dataClass.Fields[i].Name);
                 // Attribute data type
-                _selectedTypeIdxs[i] = EditorGUILayout.Popup(_selectedTypeIdxs[i], _availableTypeNames);
+                _selectedTypeIdxs[i] = EditorGUILayout.Popup(_selectedTypeIdxs[i], _availableTypeNames.ToArray());
                 _dataClass.Fields[i].Typename = _availableTypeNames[_selectedTypeIdxs[i]];
                 // Attribute value
                 switch (_dataClass.Fields[i].Typename)
@@ -174,7 +188,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             _newFieldName = EditorGUILayout.TextField(_newFieldName);
 
             // Attribute data type
-            _newFieldDataTypeIdx = EditorGUILayout.Popup(_newFieldDataTypeIdx, _availableTypeNames);
+            _newFieldDataTypeIdx = EditorGUILayout.Popup(_newFieldDataTypeIdx, _availableTypeNames.ToArray());
             var newDataType = _availableTypeNames[_newFieldDataTypeIdx];
             if (newDataType != _newFieldDataType)
             {

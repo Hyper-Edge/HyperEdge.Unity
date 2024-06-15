@@ -10992,6 +10992,8 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export
         private static global::System.ReadOnlySpan<byte> GetSpan_Name() => new byte[1 + 4] { 164, 78, 97, 109, 101 };
         // Base
         private static global::System.ReadOnlySpan<byte> GetSpan_Base() => new byte[1 + 4] { 164, 66, 97, 115, 101 };
+        // FilePath
+        private static global::System.ReadOnlySpan<byte> GetSpan_FilePath() => new byte[1 + 8] { 168, 70, 105, 108, 101, 80, 97, 116, 104 };
         // Fields
         private static global::System.ReadOnlySpan<byte> GetSpan_Fields() => new byte[1 + 6] { 166, 70, 105, 101, 108, 100, 115 };
 
@@ -11004,13 +11006,15 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export
             }
 
             var formatterResolver = options.Resolver;
-            writer.WriteMapHeader(4);
+            writer.WriteMapHeader(5);
             writer.WriteRaw(GetSpan_Id());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Ulid>(formatterResolver).Serialize(ref writer, value.Id, options);
             writer.WriteRaw(GetSpan_Name());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Name, options);
             writer.WriteRaw(GetSpan_Base());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Base, options);
+            writer.WriteRaw(GetSpan_FilePath());
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.FilePath, options);
             writer.WriteRaw(GetSpan_Fields());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
         }
@@ -11052,6 +11056,11 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export
                                 ____result.Base = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
                                 continue;
                         }
+                    case 8:
+                        if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 7526747875169823046UL) { goto FAIL; }
+
+                        ____result.FilePath = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
+                        continue;
                     case 6:
                         if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 126875152509254UL) { goto FAIL; }
 
@@ -11154,7 +11163,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export
             var formatterResolver = options.Resolver;
             writer.WriteMapHeader(1);
             writer.WriteRaw(GetSpan_Fields());
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
         }
 
         public global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldsDTO Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -11181,7 +11190,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export
                     case 6:
                         if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 126875152509254UL) { goto FAIL; }
 
-                        ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
                         continue;
 
                 }

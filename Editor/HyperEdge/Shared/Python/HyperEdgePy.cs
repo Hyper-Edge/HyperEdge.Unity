@@ -94,42 +94,49 @@ namespace HyperEdge.Sdk.Unity
 
         public async UniTask<HePyResult> CreateDataClass(string name, string flds, bool update)
         {
-            var args = new List<string> { "create-dataclass", name,
+            var args = new List<string> {
+                "create-dataclass", name,
                 "--fields", flds };
-            if (update)
-            {
-                args.Add("--update");
-            }
+            //
+            if (update) { args.Add("--update"); }
             return await RunHeAdminPy(args.ToArray());
         }
 
         public async UniTask<HePyResult> CreateModelClass(string name, string dataFlds, string modelFlds)
         {
-            var args = new string[] { "create-model", name,
+            var args = new string[] {
+                "create-model", name,
                 "--data-fields", dataFlds,
                 "--model-fields", modelFlds };
             return await RunHeAdminPy(args);
         }
 
-        public async UniTask<HePyResult> CreateStruct(string name, string flds)
+        public async UniTask<HePyResult> CreateStruct(string name, string flds, bool update)
         {
-            var args = new string[] { "create-struct", name,
+            var args = new List<string> {
+                "create-struct", name,
                 "--fields", flds };
-            return await RunHeAdminPy(args);
+            if (update) { args.Add("--update"); }
+            return await RunHeAdminPy(args.ToArray());
         }
 
-        public async UniTask<HePyResult> CreateEventClass(string name, string flds)
+        public async UniTask<HePyResult> CreateEventClass(string name, string flds, bool update)
         {
-            var args = new string[] { "create-event", name,
+            var args = new List<string> {
+                "create-event", name,
                 "--fields", flds };
-            return await RunHeAdminPy(args);
+            if (update) { args.Add("--update"); }
+            return await RunHeAdminPy(args.ToArray());
         }
 
-        public async UniTask<HePyResult> CreateStorageClass(string name, string storageType, string flds)
+        public async UniTask<HePyResult> CreateStorageClass(string name, string storageType, string flds, bool update)
         {
-            var args = new string[] { "create-storage", name,
+            var args = new List<string> {
+                "create-storage", name,
                 "--storage-type", storageType,
                 "--fields", flds };
+            //
+            if (update) { args.Add("--update"); }
             return await RunHeAdminPy(args);
         }
 
@@ -150,29 +157,46 @@ namespace HyperEdge.Sdk.Unity
             };
             return await RunHeAdminPy(args);
         }
-        public async UniTask<HePyResult> CreateEnergySystem(string name, string dataFlds, string modelFlds)
+        public async UniTask<HePyResult> CreateEnergySystem(
+            string name,
+            string dataFlds,
+            string modelFlds,
+            bool update)
         {
-            var args = new string[] { "create-energy-system", name,
+            var args = new List<string> {
+                "create-energy-system", name,
                 "--data-fields", dataFlds,
                 "--model-fields", modelFlds };
-            return await RunHeAdminPy(args);
+            if (update) { args.Add("--update"); }
+            return await RunHeAdminPy(args.ToArray());
         }
 
-        public async UniTask<HePyResult> CreateBattlePass(string name, string dataFlds, string levelDataFields, string modelFlds)
+        public async UniTask<HePyResult> CreateBattlePass(
+            string name,
+            string dataFlds,
+            string levelDataFields,
+            string modelFlds,
+            bool update)
         {
-            var args = new string[] { "create-battlepass", name,
+            var args = new List<string> {
+                "create-battlepass", name,
                 "--data-fields", dataFlds,
                 "--level-data-fields", levelDataFields,
                 "--model-fields", modelFlds };
-            return await RunHeAdminPy(args);
+            //
+            if (update) { args.Add("--update"); }
+            return await RunHeAdminPy(args.ToArray());
         }
 
-        public async UniTask<HePyResult> CreateTournament(string name, string dataFlds, string modelFlds)
+        public async UniTask<HePyResult> CreateTournament(string name, string dataFlds, string modelFlds, bool update)
         {
-            var args = new string[] { "create-tournament", name,
+            var args = new List<string> {
+                "create-tournament", name,
                 "--data-fields", dataFlds,
                 "--model-fields", modelFlds };
-            return await RunHeAdminPy(args);
+            //
+            if (update) { args.Add("--update"); }
+            return await RunHeAdminPy(args.ToArray());
         }
 
         public async UniTask<HePyResult> CreateRequestHandler(string name, string reqFlds, string respFlds)
