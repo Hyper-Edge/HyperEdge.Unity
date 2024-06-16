@@ -160,6 +160,12 @@ def _write_py_file(p, s, update=False):
         f.write(s)
 
 
+def _pythonize_type(type_s: str):
+    if type_s == 'string':
+        return 'str'
+    return type_s
+
+
 def _output_fields(fields):
     s = ""
     fields = fields.split(',')
@@ -168,22 +174,50 @@ def _output_fields(fields):
     for fld in fields:
         fld_ = fld.split(':')
         fname, ftype = fld_
-        s += f"    {inflection.camelize(fname)}: {ftype}\n"
+        s += f"    {inflection.camelize(fname)}: {_pythonize_type(ftype)}\n"
     return s
+
+
+def _remove_cls_impl(cls, mod):
+    mod_classes = []
+    for (obj_name, obj) in inspect.getmembers(mod):
+        if not inspect.isclass(obj):
+            continue
+        if obj.__module__ != mod.__name__:
+            continue
+        mod_classes.append(obj)
+    #
+    src_file = inspect.getsourcefile(cls)
+    if len(mod_classes) == 1 and mod_classes[0] is cls:
+        os.remove(src_file)
+        return
+    srclines, start_lineno = inspect.getsourcelines(cls)
+    with open(src_file, 'r') as f:
+        orig_lines = [l.rstrip() for l in f.readlines()]
+    new_lines = orig_lines[:start_lineno-1] + orig_lines[start_lineno+len(srclines):]
+    with open(src_file, 'w') as f:
+        f.write('\n'.join(new_lines))
 
 
 def _update_cls_impl(cls, src: str):
     new_lines = src.split('\n')
     srclines, start_lineno = inspect.getsourcelines(cls)
     src_file = inspect.getsourcefile(cls)
-    print("ZZZZ:", new_lines)
     with open(src_file, 'r') as f:
         orig_lines = [l.rstrip() for l in f.readlines()]
-    new_lines = orig_lines[:start_lineno] +\
-        new_lines +\
-        orig_lines[start_lineno+len(srclines):]
+    new_lines = orig_lines[:start_lineno-1] + new_lines + orig_lines[start_lineno+len(srclines):]
     with open(src_file, 'w') as f:
         f.write('\n'.join(new_lines))
+
+
+@cli_app.command()
+def remove_dataclass(ctx: typer.Context,
+                     name: str = typer.Argument(..., help="Name of the Dataclass"),
+                     module_name: Optional[str] = typer.Option(..., "--module-name", help='Module of the DataClass')):
+    mod = importlib.import_module(module_name)
+    cls = getattr(mod, name)
+    _remove_cls_impl(cls, mod)
+    ctx.obj.export_current(False)
 
 
 @cli_app.command()
@@ -211,7 +245,7 @@ def create_dataclass(ctx: typer.Context,
     Create a new data class, provided with <name> and <fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
     fname = inflection.underscore(name)
-    cls_name = '{inflection.camelize(name)}Data'
+    cls_name = f'{inflection.camelize(name)}Data'
     fpath = ctx.obj.get_models_paths().joinpath('data', f'{fname}.py')
     #
     s = f"""from hyperedge.sdk.models import BaseData, DataRef

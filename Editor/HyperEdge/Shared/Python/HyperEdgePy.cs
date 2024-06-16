@@ -113,6 +113,15 @@ namespace HyperEdge.Sdk.Unity
             return await RunHeAdminPy(args);
         }
 
+        public async UniTask<HePyResult> RemoveDataClass(string name, string modName)
+        {
+            var args = new string[] {
+                "remove-dataclass", name,
+                "--module-name", modName
+            };
+            return await RunHeAdminPy(args);
+        }
+
         public async UniTask<HePyResult> CreateModelClass(string name, string dataFlds, string modelFlds)
         {
             var args = new string[] {

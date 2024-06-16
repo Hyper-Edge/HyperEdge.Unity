@@ -367,6 +367,21 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                     }
                 }
             }
+            else
+            {
+                if (_newGmStructTypeIdx == (int)GmStructType.STATIC_DATA)
+                {
+                    var dataClassNames = _appDef.Data.DataClasses.Select(v => v.Name).ToArray();
+                    _dataClassIdx = EditorGUILayout.Popup(_dataClassIdx, dataClassNames);
+                    //
+                    EditorGUILayout.Space();
+                    if (GUILayout.Button("Remove DataClass"))
+                    {
+                        var dataClass = _appDef.Data.DataClasses[_dataClassIdx];
+                        RemoveDataClass(dataClass).Forget();
+                    }
+                }
+            }
         }
 
         private void OnBattlePassesTab()
@@ -721,6 +736,19 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
+        private async UniTask<bool> RemoveDataClass(DataClassDTO dataClass)
+        {
+            await _taskSem.WaitAsync();
+            try
+            {
+                return await RemoveDataClassImpl(dataClass);
+            }
+            finally
+            {
+                _taskSem.Release();
+            }
+        }
+
         private async UniTask<bool> CreateNewDataClassImpl(DataClassDTO dataClass)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
@@ -744,6 +772,20 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             else
             {
                 EditorUtility.DisplayDialog("HyperEdge", $"Successfully updated DataClass \"{dataClass.Name}\"", "Ok");
+            }
+            return pyRet.IsSuccess;
+        }
+
+        private async UniTask<bool> RemoveDataClassImpl(DataClassDTO dataClass)
+        {
+            var pyRet = await _py.RemoveDataClass(dataClass.Name, dataClass.FilePath);
+            if (pyRet.IsSuccess)
+            {
+                EditorUtility.DisplayDialog("HyperEdge", $"Successfully removed DataClass \"{dataClass.Name}\"", "Ok");
+            }
+            else
+            {
+                EditorUtility.DisplayDialog("HyperEdge", $"Failed to remove DataClass \"{dataClass.Name}\"", "Ok");
             }
             return pyRet.IsSuccess;
         }
