@@ -125,7 +125,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             EditorGUILayout.Space();
             if (!string.IsNullOrEmpty(_dataClass.FilePath))
             {
-                EditorGUILayout.LabelField($"File Path: {_dataClass.FilePath}");
+                EditorGUILayout.LabelField($"Module: {_dataClass.FilePath}");
                 EditorGUILayout.Space();
             }
             EditorGUILayout.LabelField("Fields:");

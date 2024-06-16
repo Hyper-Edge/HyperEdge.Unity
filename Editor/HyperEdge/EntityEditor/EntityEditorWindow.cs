@@ -253,7 +253,7 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
                 {
                     if (GUILayout.Button("Create GameData"))
                     {
-                        CreateNewDataClass(_newDataClass[0], false).Forget();
+                        CreateNewDataClass(_newDataClass[0]).Forget();
                     }
                 }
                 else if (_newGmStructTypeIdx == (int)GmStructType.MODEL)
@@ -695,17 +695,12 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }  
         }
 
-        private UniTask<bool> UpdateNewDataClass(DataClassDTO dataClass)
-        {
-            return CreateNewDataClass(dataClass, true);
-        }
-
-        private async UniTask<bool> CreateNewDataClass(DataClassDTO dataClass, bool update)
+        private async UniTask<bool> UpdateNewDataClass(DataClassDTO dataClass)
         {
             await _taskSem.WaitAsync();
             try
             {
-                return await CreateNewDataClassImpl(dataClass, update);
+                return await UpdateNewDataClassImpl(dataClass);
             }
             finally
             {
@@ -713,16 +708,43 @@ namespace HyperEdge.Sdk.Unity.EntityEditor
             }
         }
 
-        private async UniTask<bool> CreateNewDataClassImpl(DataClassDTO dataClass, bool update)
+        private async UniTask<bool> CreateNewDataClass(DataClassDTO dataClass)
+        {
+            await _taskSem.WaitAsync();
+            try
+            {
+                return await CreateNewDataClassImpl(dataClass);
+            }
+            finally
+            {
+                _taskSem.Release();
+            }
+        }
+
+        private async UniTask<bool> CreateNewDataClassImpl(DataClassDTO dataClass)
         {
             var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
-            var pyRet = await _py.CreateDataClass(dataClass.Name, String.Join(',', fldsArray), update);
-            string actionName = update ? "update" : "create";
+            var pyRet = await _py.CreateDataClass(dataClass.Name, String.Join(',', fldsArray));
             if (!pyRet.IsSuccess)
             {
-                EditorUtility.DisplayDialog("HyperEdge", $"Failed to {actionName} DataClass \"{dataClass.Name}\"", "Ok");
+                EditorUtility.DisplayDialog("HyperEdge", $"Failed to create DataClass \"{dataClass.Name}\"", "Ok");
             }
-            EditorUtility.DisplayDialog("HyperEdge", $"Successfully {actionName}d DataClass \"{dataClass.Name}\"", "Ok");
+            EditorUtility.DisplayDialog("HyperEdge", $"Successfully created DataClass \"{dataClass.Name}\"", "Ok");
+            return pyRet.IsSuccess;
+        }
+
+        private async UniTask<bool> UpdateNewDataClassImpl(DataClassDTO dataClass)
+        {
+            var fldsArray = dataClass.Fields.Select(f => $"{f.Name}:{f.Typename}").ToArray();
+            var pyRet = await _py.UpdateDataClass(dataClass.Name, String.Join(',', fldsArray), dataClass.FilePath);
+            if (!pyRet.IsSuccess)
+            {
+                EditorUtility.DisplayDialog("HyperEdge", $"Failed to update DataClass \"{dataClass.Name}\"", "Ok");
+            }
+            else
+            {
+                EditorUtility.DisplayDialog("HyperEdge", $"Successfully updated DataClass \"{dataClass.Name}\"", "Ok");
+            }
             return pyRet.IsSuccess;
         }
 

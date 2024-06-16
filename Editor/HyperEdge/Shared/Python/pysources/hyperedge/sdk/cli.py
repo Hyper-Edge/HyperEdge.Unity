@@ -1,4 +1,6 @@
+import importlib
 import inflection
+import inspect
 import os
 import pathlib
 import typer
@@ -170,16 +172,46 @@ def _output_fields(fields):
     return s
 
 
+def _update_cls_impl(cls, src: str):
+    new_lines = src.split('\n')
+    srclines, start_lineno = inspect.getsourcelines(cls)
+    src_file = inspect.getsourcefile(cls)
+    print("ZZZZ:", new_lines)
+    with open(src_file, 'r') as f:
+        orig_lines = [l.rstrip() for l in f.readlines()]
+    new_lines = orig_lines[:start_lineno] +\
+        new_lines +\
+        orig_lines[start_lineno+len(srclines):]
+    with open(src_file, 'w') as f:
+        f.write('\n'.join(new_lines))
+
+
+@cli_app.command()
+def update_dataclass(ctx: typer.Context,
+                     name: str = typer.Argument(..., help="Name of the Dataclass"), 
+                     fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields'),
+                     source: Optional[str] = typer.Option(..., "--source", help='Path to source')):
+    mod = importlib.import_module(source)
+    cls = getattr(mod, name)
+ 
+    cls_src = f"class {name}(BaseData):\n"
+    if not fields:
+        fields = "Name:str"
+    cls_src += _output_fields(fields)
+    #
+    _update_cls_impl(cls, cls_src)
+    ctx.obj.export_current(False)
+
+
 @cli_app.command()
 def create_dataclass(ctx: typer.Context,
                   name: str = typer.Argument(..., help="Name of the Dataclass"), 
-                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields'),
-                  update: Optional[bool] = typer.Option(False, "--update", help='Update existing dataclass')):
+                  fields: Optional[str] = typer.Option(..., "--fields", help='Custom Fields')):
     """
     Create a new data class, provided with <name> and <fields>. Fields should be seperated by space and each field is in the <name>:<type> attribute format.
     """
     fname = inflection.underscore(name)
-    cls_name = name if update else '{inflection.camelize(name)}Data'
+    cls_name = '{inflection.camelize(name)}Data'
     fpath = ctx.obj.get_models_paths().joinpath('data', f'{fname}.py')
     #
     s = f"""from hyperedge.sdk.models import BaseData, DataRef
@@ -193,7 +225,7 @@ class {cls_name}(BaseData):
     #
     s += _output_fields(fields)
     #
-    _write_py_file(fpath, s, update)
+    _write_py_file(fpath, s)
     ctx.obj.export_current(False)
 
 

@@ -44,11 +44,14 @@ class _BaseModel(six.with_metaclass(_BaseModelMeta, BaseModel)):
         return cls._nft
 
     @classmethod
-    def get_file(cls):
+    def get_module(cls):
         app_path = pathlib.Path(os.environ['HE_APP_PATH'])
         fpath = pathlib.Path(sys.modules[cls.__module__].__file__)
         if fpath.is_relative_to(app_path):
-            return str(fpath.relative_to(app_path))
+            rp = fpath.relative_to(app_path)
+            parts = list(rp.parts)
+            parts[-1] = parts[-1].rstrip('.py')
+            return '.'.join(parts)
         else:
             return ''
 
@@ -72,7 +75,7 @@ class _BaseModel(six.with_metaclass(_BaseModelMeta, BaseModel)):
             flds.append({'Name': fname, 'Typename': get_cs_type(fdef.outer_type_)})
         return dict(
             Name=cls.__name__,
-            FilePath=cls.get_file(),
+            FilePath=cls.get_module(),
             Fields=flds
         )
 
