@@ -10,6 +10,7 @@ using UnityEditor.IMGUI.Controls;
 using HyperEdge.Shared.Protocol.Models;
 using HyperEdge.Shared.Protocol.Models.Export;
 using HyperEdge.Shared.Protocol.Models.Mechanics;
+using HyperEdge.Sdk.Unity.EditorHelpers;
 
 
 namespace HyperEdge.Sdk.Unity.DataEditor
@@ -131,6 +132,15 @@ public class BattlePassTreeView : TreeView
         //
         r = args.GetCellRect(cIdx);
         var newExpVal = EditorGUI.TextField(r, $"{item.DataItem.Exp}");
+        cIdx++;
+        //
+        r = args.GetCellRect(cIdx);
+        if (GUI.Button(r, "Edit"))
+        {
+            var rewardEditWnd = EditorWindow.GetWindow(typeof(RewardEditWindow), utility: true) as RewardEditWindow;
+            rewardEditWnd.SetReward(item.DataItem.Reward);
+            rewardEditWnd.Show();
+        }
         cIdx++;
         //
         for (int i = 0; i < _bp.LadderLevelData.Fields.Count; ++i)

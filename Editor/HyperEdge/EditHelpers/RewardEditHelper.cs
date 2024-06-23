@@ -9,7 +9,7 @@ using HyperEdge.Shared.Protocol.Models.Mechanics;
 using HyperEdge.Shared.Protocol.Models.Export;
 
 
-namespace HyperEdge.Sdk.Unity.RulesEditor
+namespace HyperEdge.Sdk.Unity.EditorHelpers
 {
     public class RewardEditHelper : ModelChooseHelper
     {
@@ -41,6 +41,21 @@ namespace HyperEdge.Sdk.Unity.RulesEditor
             foreach (var mReward in reward.Erc721Rewards)
             {
                 _selectedTypeIdxs.Add(GetModelTypeIdxByName(mReward.EntityName));
+            }
+            //
+            _selectedItemTypeIdxs.Clear();
+            _selectedItemDataInstIdxs.Clear();
+            foreach (var mReward in reward.Erc1155Rewards)
+            {
+                var parts = mReward.ItemId.Split("/");
+                var dataClsIdx = _appDef.Data.DataClasses.FindIndex(el => el.Name == parts[0]);
+                _selectedItemTypeIdxs.Add(dataClsIdx);
+                if (dataClsIdx != -1)
+                {
+                    var instances = _appDef.GetDataClassInstancesByName(_appDef.Data.DataClasses[dataClsIdx].Name);
+                    var instIdx = instances.FindIndex(el => el.Name == parts[1]);
+                    _selectedItemDataInstIdxs.Add(instIdx);
+                }
             }
         }
 

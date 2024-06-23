@@ -1,12 +1,13 @@
 {
-    "name": "HyperEdge.Sdk.Unity.DataEditor",
-    "rootNamespace": "HyperEdge.Sdk.Unity.DataEditor",
+    "name": "HyperEdge.Sdk.Unity.EditorHelpers",
+    "rootNamespace": "HyperEdge.Sdk.Unity.EditorHelpers",
     "references": [
 	    "HyperEdge.Sdk.Unity.Shared",
 	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
-	    "HyperEdge.Sdk.Unity.EditorHelpers",
-        "MessagePack",
-	    "Ulid"
+	    "MessagePipe",
+        "Ulid",
+        "UniTask",
+        "UniTask.Editor"
     ],
     "includePlatforms": [
         "Editor"

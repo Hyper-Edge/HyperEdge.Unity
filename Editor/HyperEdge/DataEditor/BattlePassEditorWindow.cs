@@ -73,7 +73,7 @@ public class BattlePassEditorWindow : EditorWindow
         }
         else
         {
-            int fldCount = bp.LadderLevelData.Fields.Count + 2;
+            int fldCount = bp.LadderLevelData.Fields.Count + 3;
             TreeViewState state = new TreeViewState();
             MultiColumnHeaderState.Column[] columns = new MultiColumnHeaderState.Column[fldCount];
             //
@@ -89,6 +89,14 @@ public class BattlePassEditorWindow : EditorWindow
             columns[fldIdx] = new MultiColumnHeaderState.Column();
             columns[fldIdx].allowToggleVisibility = false;
             columns[fldIdx].headerContent = new GUIContent("Exp");
+            columns[fldIdx].minWidth = 8;// GetPropertyWidthFromType(prop.propertyType);
+            columns[fldIdx].width = columns[fldIdx].minWidth;
+            columns[fldIdx].canSort = false;
+            fldIdx++;
+            //
+            columns[fldIdx] = new MultiColumnHeaderState.Column();
+            columns[fldIdx].allowToggleVisibility = false;
+            columns[fldIdx].headerContent = new GUIContent("Reward");
             columns[fldIdx].minWidth = 8;// GetPropertyWidthFromType(prop.propertyType);
             columns[fldIdx].width = columns[fldIdx].minWidth;
             columns[fldIdx].canSort = false;

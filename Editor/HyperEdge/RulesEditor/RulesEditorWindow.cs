@@ -9,6 +9,7 @@ using UnityEditor;
 
 using HyperEdge.Shared.Protocol.Models.Mechanics;
 using HyperEdge.Shared.Protocol.Models.Export;
+using HyperEdge.Sdk.Unity.EditorHelpers;
 
 
 namespace HyperEdge.Sdk.Unity.RulesEditor

@@ -4,6 +4,7 @@
     "references": [
 	    "HyperEdge.Sdk.Unity.Shared",
 	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+	    "HyperEdge.Sdk.Unity.EditorHelpers",
 	    "Ulid",
         "UniTask",
         "UniTask.Editor"

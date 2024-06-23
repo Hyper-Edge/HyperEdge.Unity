@@ -9,7 +9,7 @@ using HyperEdge.Shared.Protocol.Models.Mechanics;
 using HyperEdge.Shared.Protocol.Models.Export;
 
 
-namespace HyperEdge.Sdk.Unity.RulesEditor
+namespace HyperEdge.Sdk.Unity.EditorHelpers
 {
     public class CraftRuleEditHelper
     {
