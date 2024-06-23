@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using MessagePack;
 
+using HyperEdge.Shared.Protocol.Models.Export;
+
 
 namespace HyperEdge.Shared.Protocol.Models
 {
@@ -20,6 +22,6 @@ namespace HyperEdge.Shared.Protocol.Models
     [MessagePackObject(true)]
     public class DataClassItemDataDTO
     {
-        public List<DataClassItemFieldDTO> Fields { get; set; }
+        public List<DataClassInstanceFieldDTO> Fields { get; set; }
     }
 }

@@ -27,6 +27,9 @@ namespace HyperEdge.Sdk.Unity.CoDesigner
         private Dictionary<string, AIProposalDTO> _exportedLlmProposals = new();
         private Dictionary<string, string> _pId2VersionId = new();
 
+        private SemaphoreSlim _taskSem = new SemaphoreSlim(1, 1);
+        private bool TaskInProgress { get => _taskSem.CurrentCount == 0; }
+
         private List<AIProposalDTO> _llmProposals = new();
         private string[] _llmProposalNames;
         // 
@@ -240,22 +243,24 @@ namespace HyperEdge.Sdk.Unity.CoDesigner
 
         private void OnProposalsBuildTab()
         {
+            GUI.enabled = !TaskInProgress;
             if (GUILayout.Button("Export"))
             {
-                ExportProposalImpl().Forget();
+                ExportProposal().Forget();
             }
             if (!string.IsNullOrEmpty(_pData.VersionId))
             {
                 if (GUILayout.Button("Generate SDK code"))
                 {
-                    DoGenCodeImpl().Forget();
+                    DoGenCode().Forget();
                 }
                 //
                 if (GUILayout.Button("Build"))
                 {
-                    DoBuildAppVersionImpl().Forget();
+                    DoBuildAppVersion().Forget();
                 }
             }
+            GUI.enabled = true;
         }
 
         private string GetProposalDataFilePath(string pId)
@@ -407,6 +412,19 @@ namespace HyperEdge.Sdk.Unity.CoDesigner
             EditorGUILayout.EndVertical();
         }
 
+        private async UniTask<bool> ExportProposal()
+        {
+            await _taskSem.WaitAsync();
+            try
+            {
+                return await ExportProposalImpl();
+            }
+            finally
+            {
+                _taskSem.Release();
+            }
+        }
+
         private async UniTask<bool> ExportProposalImpl()
         {
             var pyRet = await _py.ConvertLlmThreadToAppDef(_pData.Id);
@@ -416,6 +434,19 @@ namespace HyperEdge.Sdk.Unity.CoDesigner
                 return false;
             }
             return true;
+        }
+
+        private async UniTask<bool> DoBuildAppVersion()
+        {
+            await _taskSem.WaitAsync();
+            try
+            {
+                return await DoBuildAppVersionImpl();
+            }
+            finally
+            {
+                _taskSem.Release();
+            }
         }
 
         private async UniTask<bool> DoBuildAppVersionImpl()
@@ -444,6 +475,19 @@ namespace HyperEdge.Sdk.Unity.CoDesigner
             //
             EditorUtility.DisplayDialog("HyperEdge", $"Server build for AIProposal-{_pData.Id} Success", "Ok");
             return true;
+        }
+
+        private async UniTask<bool> DoGenCode()
+        {
+            await _taskSem.WaitAsync();
+            try
+            {
+                return await DoGenCodeImpl();
+            }
+            finally
+            {
+                _taskSem.Release();
+            }
         }
 
         private async UniTask<bool> DoGenCodeImpl()

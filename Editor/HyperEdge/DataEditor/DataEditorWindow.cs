@@ -22,11 +22,10 @@ public class DataEditorWindow : EditorWindow
     private Dictionary<string, DatabaseTreeView> _treeViews = new();
 
     [SerializeField] protected int _selectedIndex = -1;
-    [SerializeField] protected string _targetFolderForNewAsset = "";
 
     private bool Dirty { get => _treeViews.Values.Any(v => v.Dirty); }
 
-    [MenuItem("HyperEdge/DataEditor")]
+    [MenuItem("HyperEdge/DataEditor/Data")]
     static void Open()
     {
         GetWindow<DataEditorWindow>();
@@ -48,17 +47,12 @@ public class DataEditorWindow : EditorWindow
         }
         _databaseDisplay = null;
 	    _currentAppDef = AppDefCache.Instance.GetCurrentAppDef(_appData.Name);
-        RetrieveType();
+        _objectTypeNames = _currentAppDef.DataClasses.Select(v => v.Name).ToArray();
 
         if (_selectedIndex != -1 && _selectedIndex < _objectTypeNames.Length)
 	    {
             CreateDisplayFrom(_currentAppDef.Data.DataClasses[_selectedIndex]);
 	    }
-    }
-
-    private void RetrieveType()
-    {
-        _objectTypeNames = _currentAppDef.DataClasses.Select(v => v.Name).ToArray();
     }
 
     void CreateDisplayFrom(DataClassDTO type)

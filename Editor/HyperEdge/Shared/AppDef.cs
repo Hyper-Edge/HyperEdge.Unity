@@ -7,6 +7,7 @@ using UnityEditor;
 
 using HyperEdge.Shared.Protocol.Models;
 using HyperEdge.Shared.Protocol.Models.Export;
+using HyperEdge.Shared.Protocol.Models.Mechanics;
 
 
 namespace HyperEdge.Sdk.Unity
@@ -62,6 +63,17 @@ namespace HyperEdge.Sdk.Unity
                 return instances;
             }
             return null;
+        }
+
+        public List<GenericLadderDTO> GetLaddersByProgression(ProgressionSystemDTO prog)
+        {
+            var progName = $"Progression{prog.EntityName}{prog.LevelField}";
+            return _appDef.ProgressionLadders.Where(l => l.ProgressionName == progName).ToList();
+        }
+
+        public List<BattlePassInstanceDTO> GetLaddersForBattlePass(BattlePassDTO bp)
+        {
+            return _appDef.BattlePassInstances.Where(l => l.BattlePassName == bp.Name).ToList();
         }
     }
 }

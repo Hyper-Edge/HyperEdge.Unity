@@ -15,6 +15,12 @@ namespace HyperEdge.Shared.Protocol.Models.Mechanics
         public CostDTO Cost { get; set; }
         public List<string> Conditions;
         public DataClassItemDataDTO Data { get; set; }
+
+        public GenericLadderLevelDTO Clone()
+        {
+            var bs = MessagePackSerializer.Serialize(this);
+            return MessagePackSerializer.Deserialize<GenericLadderLevelDTO>(bs);
+        }
     }
 
     [MessagePackObject(true)]
@@ -26,5 +32,11 @@ namespace HyperEdge.Shared.Protocol.Models.Mechanics
         public string Name { get; set; }
         public string LadderType { get; set; }
         public List<GenericLadderLevelDTO> Levels { get; set; }
+
+        public GenericLadderDTO Clone()
+        {
+            var bs = MessagePackSerializer.Serialize(this);
+            return MessagePackSerializer.Deserialize<GenericLadderDTO>(bs);
+        }
     }
 }

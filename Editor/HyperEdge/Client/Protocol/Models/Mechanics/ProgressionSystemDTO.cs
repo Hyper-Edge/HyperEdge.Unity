@@ -16,5 +16,10 @@ namespace HyperEdge.Shared.Protocol.Models.Mechanics
         public string LevelField { get; set; }
         public string ExperienceField { get; set; }
         public DataClassFieldsDTO LadderLevelData { get; set; }
+
+        public string GetName()
+        {
+            return $"Progression{EntityName}{LevelField}";
+        }
     }
 }

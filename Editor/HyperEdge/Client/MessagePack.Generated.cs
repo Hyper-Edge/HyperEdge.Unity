@@ -47,242 +47,240 @@ namespace MessagePack.Resolvers
 
         static GeneratedResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(234)
+            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(232)
             {
                 { typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO>>), 0 },
                 { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO>), 1 },
                 { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassContractDTO>), 2 },
                 { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemDTO>), 3 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>), 4 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO>), 5 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO>), 6 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO>), 7 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO>), 8 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>), 9 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>), 10 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO>), 11 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>), 12 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO>), 13 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO>), 14 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO>), 15 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO>), 16 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO>), 17 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO>), 18 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO>), 19 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO>), 20 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO>), 21 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO>), 22 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO>), 23 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO>), 24 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO>), 25 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost>), 26 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward>), 27 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost>), 28 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward>), 29 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO>), 30 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO>), 31 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>), 32 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO>), 33 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO>), 34 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO>), 35 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO>), 36 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO>), 37 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO>), 38 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO>), 39 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO>), 40 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO>), 41 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO>), 42 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO>), 43 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.StoreDTO>), 44 },
-                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Web3AppDTO>), 45 },
-                { typeof(global::System.Collections.Generic.List<global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>>), 46 },
-                { typeof(global::System.Collections.Generic.List<string>), 47 },
-                { typeof(global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>), 48 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddBattlePassRequest), 49 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddBattlePassResponse), 50 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddCraftRulesRequest), 51 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddCraftRulesResponse), 52 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddGameDataRequest), 53 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddGameDataResponse), 54 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddInventoryItemRequest), 55 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddInventoryItemResponse), 56 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc1155TokensRequest), 57 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc1155TokensResponse), 58 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc20TokensRequest), 59 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc20TokensResponse), 60 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc721TokensRequest), 61 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc721TokensResponse), 62 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPriceErc1155TokensRequest), 63 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddPriceErc1155TokensResponse), 64 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionLadderRequest), 65 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionLadderResponse), 66 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionRequest), 67 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionResponse), 68 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddQuestRequest), 69 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddQuestResponse), 70 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRequestHandlerRequest), 71 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRequestHandlerResponse), 72 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRewardRequest), 73 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRewardResponse), 74 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRulesRequest), 75 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddRulesResponse), 76 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddTournamentRequest), 77 },
-                { typeof(global::HyperEdge.Shared.Protocol.AddTournamentResponse), 78 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.BuildAppRequest), 79 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.BuildAppResponse), 80 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.CreateAppEnvRequest), 81 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.CreateAppEnvResponse), 82 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.RunAppRequest), 83 },
-                { typeof(global::HyperEdge.Shared.Protocol.Apps.RunAppResponse), 84 },
-                { typeof(global::HyperEdge.Shared.Protocol.ChatMessageResponse), 85 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateApiKeyRequest), 86 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateApiKeyResponse), 87 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassContractRequest), 88 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassContractResponse), 89 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassItemRequest), 90 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassItemResponse), 91 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateEnergySystemRequest), 92 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateEnergySystemResponse), 93 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc1155TokenRequest), 94 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc1155TokenResponse), 95 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc20TokenRequest), 96 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc20TokenResponse), 97 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc721TokenRequest), 98 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateErc721TokenResponse), 99 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreatePackageRequest), 100 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreatePackageResponse), 101 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreatePriceRequest), 102 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreatePriceResponse), 103 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateStoreRequest), 104 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateStoreResponse), 105 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateWeb3AppRequest), 106 },
-                { typeof(global::HyperEdge.Shared.Protocol.CreateWeb3AppResponse), 107 },
-                { typeof(global::HyperEdge.Shared.Protocol.DeleteApiKeyRequest), 108 },
-                { typeof(global::HyperEdge.Shared.Protocol.DeleteApiKeyResponse), 109 },
-                { typeof(global::HyperEdge.Shared.Protocol.DeployContractRequest), 110 },
-                { typeof(global::HyperEdge.Shared.Protocol.DeployContractResponse), 111 },
-                { typeof(global::HyperEdge.Shared.Protocol.Erc721DataDTO), 112 },
-                { typeof(global::HyperEdge.Shared.Protocol.ExportAppDefRequest), 113 },
-                { typeof(global::HyperEdge.Shared.Protocol.ExportAppDefResponse), 114 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetAccountRequest), 115 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetAccountResponse), 116 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetChallengeRequest), 117 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetChallengeResponse), 118 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractRequest), 119 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractResponse), 120 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractsRequest), 121 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractsResponse), 122 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassItemsRequest), 123 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassItemsResponse), 124 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokenRequest), 125 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokenResponse), 126 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokensRequest), 127 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokensResponse), 128 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokenRequest), 129 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokenResponse), 130 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokensRequest), 131 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokensResponse), 132 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokenRequest), 133 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokenResponse), 134 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokensRequest), 135 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokensResponse), 136 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetInventoryItemsRequest), 137 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetInventoryItemsResponse), 138 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetPackageRequest), 139 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetPackageResponse), 140 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetRegisterAccountChallengeRequest), 141 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetRequestHandlersRequest), 142 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetRequestHandlersResponse), 143 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetStoreRequest), 144 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetStoreResponse), 145 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetStoresRequest), 146 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetStoresResponse), 147 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppRequest), 148 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppResponse), 149 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppsRequest), 150 },
-                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppsResponse), 151 },
-                { typeof(global::HyperEdge.Shared.Protocol.JoinChatRoomRequest), 152 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.AccountDTO), 153 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.AppEnvDTO), 154 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO), 155 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassContractDataDTO), 156 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassContractDTO), 157 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassItemDataDTO), 158 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassItemDTO), 159 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO), 160 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO), 161 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO), 162 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO), 163 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO), 164 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.AppDefDTO), 165 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO), 166 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO), 167 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldsDTO), 168 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO), 169 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO), 170 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO), 171 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO), 172 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO), 173 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO), 174 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO), 175 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO), 176 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO), 177 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO), 178 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO), 179 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO), 180 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO), 181 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.CostDTO), 182 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO), 183 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO), 184 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.EntityFieldInitDTO), 185 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost), 186 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward), 187 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost), 188 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward), 189 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO), 190 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO), 191 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO), 192 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO), 193 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO), 194 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO), 195 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO), 196 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO), 197 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO), 198 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO), 199 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO), 200 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO), 201 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO), 202 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageDTO), 203 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc1155TokensDTO), 204 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc20TokensDTO), 205 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc721TokensDTO), 206 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PriceDTO), 207 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.PriceErc1155TokensDTO), 208 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO), 209 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.StoreDTO), 210 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Web3AppDataDTO), 211 },
-                { typeof(global::HyperEdge.Shared.Protocol.Models.Web3AppDTO), 212 },
-                { typeof(global::HyperEdge.Shared.Protocol.RegisterAccountRequest), 213 },
-                { typeof(global::HyperEdge.Shared.Protocol.RegisterAccountResponse), 214 },
-                { typeof(global::HyperEdge.Shared.Protocol.ReleaseAppDefRequest), 215 },
-                { typeof(global::HyperEdge.Shared.Protocol.ReleaseAppDefResponse), 216 },
-                { typeof(global::HyperEdge.Shared.Protocol.RuleWorkflowsDTO), 217 },
-                { typeof(global::HyperEdge.Shared.Protocol.SetPackagePriceRequest), 218 },
-                { typeof(global::HyperEdge.Shared.Protocol.SetPackagePriceResponse), 219 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateAccountRequest), 220 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateAccountResponse), 221 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassItemRequest), 222 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassItemResponse), 223 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassRequest), 224 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassResponse), 225 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateErc721TokenRequest), 226 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateErc721TokenResponse), 227 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdatePackageRequest), 228 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdatePackageResponse), 229 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateStoreRequest), 230 },
-                { typeof(global::HyperEdge.Shared.Protocol.UpdateStoreResponse), 231 },
-                { typeof(global::HyperEdge.Shared.Protocol.ValidateChallengeRequest), 232 },
-                { typeof(global::HyperEdge.Shared.Protocol.ValidateChallengeResponse), 233 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO>), 4 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO>), 5 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO>), 6 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO>), 7 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>), 8 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>), 9 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO>), 10 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>), 11 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO>), 12 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO>), 13 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO>), 14 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO>), 15 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO>), 16 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO>), 17 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO>), 18 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO>), 19 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO>), 20 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO>), 21 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO>), 22 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO>), 23 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO>), 24 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost>), 25 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward>), 26 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost>), 27 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward>), 28 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO>), 29 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO>), 30 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>), 31 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO>), 32 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO>), 33 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO>), 34 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO>), 35 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO>), 36 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO>), 37 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO>), 38 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO>), 39 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO>), 40 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO>), 41 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO>), 42 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.StoreDTO>), 43 },
+                { typeof(global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Web3AppDTO>), 44 },
+                { typeof(global::System.Collections.Generic.List<global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>>), 45 },
+                { typeof(global::System.Collections.Generic.List<string>), 46 },
+                { typeof(global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>), 47 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddBattlePassRequest), 48 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddBattlePassResponse), 49 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddCraftRulesRequest), 50 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddCraftRulesResponse), 51 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddGameDataRequest), 52 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddGameDataResponse), 53 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddInventoryItemRequest), 54 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddInventoryItemResponse), 55 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc1155TokensRequest), 56 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc1155TokensResponse), 57 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc20TokensRequest), 58 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc20TokensResponse), 59 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc721TokensRequest), 60 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPackageErc721TokensResponse), 61 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPriceErc1155TokensRequest), 62 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddPriceErc1155TokensResponse), 63 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionLadderRequest), 64 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionLadderResponse), 65 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionRequest), 66 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddProgressionResponse), 67 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddQuestRequest), 68 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddQuestResponse), 69 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRequestHandlerRequest), 70 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRequestHandlerResponse), 71 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRewardRequest), 72 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRewardResponse), 73 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRulesRequest), 74 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddRulesResponse), 75 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddTournamentRequest), 76 },
+                { typeof(global::HyperEdge.Shared.Protocol.AddTournamentResponse), 77 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.BuildAppRequest), 78 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.BuildAppResponse), 79 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.CreateAppEnvRequest), 80 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.CreateAppEnvResponse), 81 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.RunAppRequest), 82 },
+                { typeof(global::HyperEdge.Shared.Protocol.Apps.RunAppResponse), 83 },
+                { typeof(global::HyperEdge.Shared.Protocol.ChatMessageResponse), 84 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateApiKeyRequest), 85 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateApiKeyResponse), 86 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassContractRequest), 87 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassContractResponse), 88 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassItemRequest), 89 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateDataClassItemResponse), 90 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateEnergySystemRequest), 91 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateEnergySystemResponse), 92 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc1155TokenRequest), 93 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc1155TokenResponse), 94 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc20TokenRequest), 95 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc20TokenResponse), 96 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc721TokenRequest), 97 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateErc721TokenResponse), 98 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreatePackageRequest), 99 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreatePackageResponse), 100 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreatePriceRequest), 101 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreatePriceResponse), 102 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateStoreRequest), 103 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateStoreResponse), 104 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateWeb3AppRequest), 105 },
+                { typeof(global::HyperEdge.Shared.Protocol.CreateWeb3AppResponse), 106 },
+                { typeof(global::HyperEdge.Shared.Protocol.DeleteApiKeyRequest), 107 },
+                { typeof(global::HyperEdge.Shared.Protocol.DeleteApiKeyResponse), 108 },
+                { typeof(global::HyperEdge.Shared.Protocol.DeployContractRequest), 109 },
+                { typeof(global::HyperEdge.Shared.Protocol.DeployContractResponse), 110 },
+                { typeof(global::HyperEdge.Shared.Protocol.Erc721DataDTO), 111 },
+                { typeof(global::HyperEdge.Shared.Protocol.ExportAppDefRequest), 112 },
+                { typeof(global::HyperEdge.Shared.Protocol.ExportAppDefResponse), 113 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetAccountRequest), 114 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetAccountResponse), 115 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetChallengeRequest), 116 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetChallengeResponse), 117 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractRequest), 118 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractResponse), 119 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractsRequest), 120 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassContractsResponse), 121 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassItemsRequest), 122 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetDataClassItemsResponse), 123 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokenRequest), 124 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokenResponse), 125 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokensRequest), 126 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc1155TokensResponse), 127 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokenRequest), 128 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokenResponse), 129 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokensRequest), 130 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc20TokensResponse), 131 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokenRequest), 132 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokenResponse), 133 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokensRequest), 134 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetErc721TokensResponse), 135 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetInventoryItemsRequest), 136 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetInventoryItemsResponse), 137 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetPackageRequest), 138 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetPackageResponse), 139 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetRegisterAccountChallengeRequest), 140 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetRequestHandlersRequest), 141 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetRequestHandlersResponse), 142 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetStoreRequest), 143 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetStoreResponse), 144 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetStoresRequest), 145 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetStoresResponse), 146 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppRequest), 147 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppResponse), 148 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppsRequest), 149 },
+                { typeof(global::HyperEdge.Shared.Protocol.GetWeb3AppsResponse), 150 },
+                { typeof(global::HyperEdge.Shared.Protocol.JoinChatRoomRequest), 151 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.AccountDTO), 152 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.AppEnvDTO), 153 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO), 154 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassContractDataDTO), 155 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassContractDTO), 156 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassItemDataDTO), 157 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.DataClassItemDTO), 158 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO), 159 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO), 160 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO), 161 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO), 162 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.AppDefDTO), 163 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO), 164 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO), 165 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldsDTO), 166 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO), 167 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO), 168 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO), 169 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO), 170 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO), 171 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO), 172 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO), 173 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO), 174 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO), 175 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO), 176 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO), 177 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO), 178 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO), 179 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.CostDTO), 180 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO), 181 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO), 182 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.EntityFieldInitDTO), 183 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost), 184 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward), 185 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost), 186 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward), 187 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO), 188 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO), 189 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO), 190 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO), 191 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO), 192 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO), 193 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO), 194 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO), 195 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO), 196 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO), 197 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO), 198 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO), 199 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO), 200 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageDTO), 201 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc1155TokensDTO), 202 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc20TokensDTO), 203 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PackageErc721TokensDTO), 204 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PriceDTO), 205 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.PriceErc1155TokensDTO), 206 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO), 207 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.StoreDTO), 208 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Web3AppDataDTO), 209 },
+                { typeof(global::HyperEdge.Shared.Protocol.Models.Web3AppDTO), 210 },
+                { typeof(global::HyperEdge.Shared.Protocol.RegisterAccountRequest), 211 },
+                { typeof(global::HyperEdge.Shared.Protocol.RegisterAccountResponse), 212 },
+                { typeof(global::HyperEdge.Shared.Protocol.ReleaseAppDefRequest), 213 },
+                { typeof(global::HyperEdge.Shared.Protocol.ReleaseAppDefResponse), 214 },
+                { typeof(global::HyperEdge.Shared.Protocol.RuleWorkflowsDTO), 215 },
+                { typeof(global::HyperEdge.Shared.Protocol.SetPackagePriceRequest), 216 },
+                { typeof(global::HyperEdge.Shared.Protocol.SetPackagePriceResponse), 217 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateAccountRequest), 218 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateAccountResponse), 219 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassItemRequest), 220 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassItemResponse), 221 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassRequest), 222 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateDataClassResponse), 223 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateErc721TokenRequest), 224 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateErc721TokenResponse), 225 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdatePackageRequest), 226 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdatePackageResponse), 227 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateStoreRequest), 228 },
+                { typeof(global::HyperEdge.Shared.Protocol.UpdateStoreResponse), 229 },
+                { typeof(global::HyperEdge.Shared.Protocol.ValidateChallengeRequest), 230 },
+                { typeof(global::HyperEdge.Shared.Protocol.ValidateChallengeResponse), 231 },
             };
         }
 
@@ -300,236 +298,234 @@ namespace MessagePack.Resolvers
                 case 1: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.ContractFieldDTO>();
                 case 2: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.DataClassContractDTO>();
                 case 3: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.DataClassItemDTO>();
-                case 4: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>();
-                case 5: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO>();
-                case 6: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO>();
-                case 7: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO>();
-                case 8: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO>();
-                case 9: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>();
-                case 10: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>();
-                case 11: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO>();
-                case 12: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>();
-                case 13: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO>();
-                case 14: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO>();
-                case 15: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO>();
-                case 16: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO>();
-                case 17: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO>();
-                case 18: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO>();
-                case 19: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO>();
-                case 20: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO>();
-                case 21: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO>();
-                case 22: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO>();
-                case 23: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO>();
-                case 24: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO>();
-                case 25: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO>();
-                case 26: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost>();
-                case 27: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward>();
-                case 28: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost>();
-                case 29: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward>();
-                case 30: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO>();
-                case 31: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO>();
-                case 32: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>();
-                case 33: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO>();
-                case 34: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO>();
-                case 35: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO>();
-                case 36: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO>();
-                case 37: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO>();
-                case 38: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO>();
-                case 39: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO>();
-                case 40: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO>();
-                case 41: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO>();
-                case 42: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO>();
-                case 43: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO>();
-                case 44: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.StoreDTO>();
-                case 45: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Web3AppDTO>();
-                case 46: return new global::MessagePack.Formatters.ListFormatter<global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>>();
-                case 47: return new global::MessagePack.Formatters.ListFormatter<string>();
-                case 48: return new global::MessagePack.Formatters.TupleFormatter<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>();
-                case 49: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddBattlePassRequestFormatter();
-                case 50: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddBattlePassResponseFormatter();
-                case 51: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddCraftRulesRequestFormatter();
-                case 52: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddCraftRulesResponseFormatter();
-                case 53: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddGameDataRequestFormatter();
-                case 54: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddGameDataResponseFormatter();
-                case 55: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddInventoryItemRequestFormatter();
-                case 56: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddInventoryItemResponseFormatter();
-                case 57: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc1155TokensRequestFormatter();
-                case 58: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc1155TokensResponseFormatter();
-                case 59: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc20TokensRequestFormatter();
-                case 60: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc20TokensResponseFormatter();
-                case 61: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc721TokensRequestFormatter();
-                case 62: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc721TokensResponseFormatter();
-                case 63: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPriceErc1155TokensRequestFormatter();
-                case 64: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPriceErc1155TokensResponseFormatter();
-                case 65: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionLadderRequestFormatter();
-                case 66: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionLadderResponseFormatter();
-                case 67: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionRequestFormatter();
-                case 68: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionResponseFormatter();
-                case 69: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddQuestRequestFormatter();
-                case 70: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddQuestResponseFormatter();
-                case 71: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRequestHandlerRequestFormatter();
-                case 72: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRequestHandlerResponseFormatter();
-                case 73: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRewardRequestFormatter();
-                case 74: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRewardResponseFormatter();
-                case 75: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRulesRequestFormatter();
-                case 76: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRulesResponseFormatter();
-                case 77: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddTournamentRequestFormatter();
-                case 78: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddTournamentResponseFormatter();
-                case 79: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.BuildAppRequestFormatter();
-                case 80: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.BuildAppResponseFormatter();
-                case 81: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.CreateAppEnvRequestFormatter();
-                case 82: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.CreateAppEnvResponseFormatter();
-                case 83: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.RunAppRequestFormatter();
-                case 84: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.RunAppResponseFormatter();
-                case 85: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ChatMessageResponseFormatter();
-                case 86: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateApiKeyRequestFormatter();
-                case 87: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateApiKeyResponseFormatter();
-                case 88: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassContractRequestFormatter();
-                case 89: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassContractResponseFormatter();
-                case 90: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassItemRequestFormatter();
-                case 91: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassItemResponseFormatter();
-                case 92: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateEnergySystemRequestFormatter();
-                case 93: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateEnergySystemResponseFormatter();
-                case 94: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc1155TokenRequestFormatter();
-                case 95: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc1155TokenResponseFormatter();
-                case 96: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc20TokenRequestFormatter();
-                case 97: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc20TokenResponseFormatter();
-                case 98: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc721TokenRequestFormatter();
-                case 99: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc721TokenResponseFormatter();
-                case 100: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePackageRequestFormatter();
-                case 101: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePackageResponseFormatter();
-                case 102: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePriceRequestFormatter();
-                case 103: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePriceResponseFormatter();
-                case 104: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateStoreRequestFormatter();
-                case 105: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateStoreResponseFormatter();
-                case 106: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateWeb3AppRequestFormatter();
-                case 107: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateWeb3AppResponseFormatter();
-                case 108: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeleteApiKeyRequestFormatter();
-                case 109: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeleteApiKeyResponseFormatter();
-                case 110: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeployContractRequestFormatter();
-                case 111: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeployContractResponseFormatter();
-                case 112: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Erc721DataDTOFormatter();
-                case 113: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ExportAppDefRequestFormatter();
-                case 114: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ExportAppDefResponseFormatter();
-                case 115: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetAccountRequestFormatter();
-                case 116: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetAccountResponseFormatter();
-                case 117: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetChallengeRequestFormatter();
-                case 118: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetChallengeResponseFormatter();
-                case 119: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractRequestFormatter();
-                case 120: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractResponseFormatter();
-                case 121: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractsRequestFormatter();
-                case 122: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractsResponseFormatter();
-                case 123: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassItemsRequestFormatter();
-                case 124: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassItemsResponseFormatter();
-                case 125: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokenRequestFormatter();
-                case 126: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokenResponseFormatter();
-                case 127: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokensRequestFormatter();
-                case 128: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokensResponseFormatter();
-                case 129: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokenRequestFormatter();
-                case 130: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokenResponseFormatter();
-                case 131: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokensRequestFormatter();
-                case 132: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokensResponseFormatter();
-                case 133: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokenRequestFormatter();
-                case 134: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokenResponseFormatter();
-                case 135: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokensRequestFormatter();
-                case 136: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokensResponseFormatter();
-                case 137: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetInventoryItemsRequestFormatter();
-                case 138: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetInventoryItemsResponseFormatter();
-                case 139: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetPackageRequestFormatter();
-                case 140: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetPackageResponseFormatter();
-                case 141: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRegisterAccountChallengeRequestFormatter();
-                case 142: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRequestHandlersRequestFormatter();
-                case 143: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRequestHandlersResponseFormatter();
-                case 144: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoreRequestFormatter();
-                case 145: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoreResponseFormatter();
-                case 146: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoresRequestFormatter();
-                case 147: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoresResponseFormatter();
-                case 148: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppRequestFormatter();
-                case 149: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppResponseFormatter();
-                case 150: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppsRequestFormatter();
-                case 151: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppsResponseFormatter();
-                case 152: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.JoinChatRoomRequestFormatter();
-                case 153: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.AccountDTOFormatter();
-                case 154: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.AppEnvDTOFormatter();
-                case 155: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.ContractFieldDTOFormatter();
-                case 156: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassContractDataDTOFormatter();
-                case 157: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassContractDTOFormatter();
-                case 158: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassItemDataDTOFormatter();
-                case 159: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassItemDTOFormatter();
-                case 160: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTOFormatter();
-                case 161: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc1155ItemDTOFormatter();
-                case 162: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc1155TokenDTOFormatter();
-                case 163: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc20TokenDTOFormatter();
-                case 164: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc721TokenDTOFormatter();
-                case 165: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.AppDefDTOFormatter();
-                case 166: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassDTOFormatter();
-                case 167: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTOFormatter();
-                case 168: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassFieldsDTOFormatter();
-                case 169: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTOFormatter();
-                case 170: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTOFormatter();
-                case 171: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTOFormatter();
-                case 172: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTOFormatter();
-                case 173: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTOFormatter();
-                case 174: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTOFormatter();
-                case 175: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTOFormatter();
-                case 176: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTOFormatter();
-                case 177: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTOFormatter();
-                case 178: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTOFormatter();
-                case 179: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTOFormatter();
-                case 180: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTOFormatter();
-                case 181: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTOFormatter();
-                case 182: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.CostDTOFormatter();
-                case 183: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTOFormatter();
-                case 184: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTOFormatter();
-                case 185: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.EntityFieldInitDTOFormatter();
-                case 186: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155CostFormatter();
-                case 187: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155RewardFormatter();
-                case 188: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc721CostFormatter();
-                case 189: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc721RewardFormatter();
-                case 190: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTOFormatter();
-                case 191: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTOFormatter();
-                case 192: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTOFormatter();
-                case 193: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTOFormatter();
-                case 194: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTOFormatter();
-                case 195: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTOFormatter();
-                case 196: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTOFormatter();
-                case 197: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTOFormatter();
-                case 198: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTOFormatter();
-                case 199: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTOFormatter();
-                case 200: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTOFormatter();
-                case 201: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTOFormatter();
-                case 202: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTOFormatter();
-                case 203: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageDTOFormatter();
-                case 204: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc1155TokensDTOFormatter();
-                case 205: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc20TokensDTOFormatter();
-                case 206: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc721TokensDTOFormatter();
-                case 207: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PriceDTOFormatter();
-                case 208: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PriceErc1155TokensDTOFormatter();
-                case 209: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.RequestHandlerDTOFormatter();
-                case 210: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.StoreDTOFormatter();
-                case 211: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Web3AppDataDTOFormatter();
-                case 212: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Web3AppDTOFormatter();
-                case 213: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RegisterAccountRequestFormatter();
-                case 214: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RegisterAccountResponseFormatter();
-                case 215: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ReleaseAppDefRequestFormatter();
-                case 216: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ReleaseAppDefResponseFormatter();
-                case 217: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RuleWorkflowsDTOFormatter();
-                case 218: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.SetPackagePriceRequestFormatter();
-                case 219: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.SetPackagePriceResponseFormatter();
-                case 220: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateAccountRequestFormatter();
-                case 221: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateAccountResponseFormatter();
-                case 222: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassItemRequestFormatter();
-                case 223: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassItemResponseFormatter();
-                case 224: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassRequestFormatter();
-                case 225: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassResponseFormatter();
-                case 226: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateErc721TokenRequestFormatter();
-                case 227: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateErc721TokenResponseFormatter();
-                case 228: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdatePackageRequestFormatter();
-                case 229: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdatePackageResponseFormatter();
-                case 230: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateStoreRequestFormatter();
-                case 231: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateStoreResponseFormatter();
-                case 232: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ValidateChallengeRequestFormatter();
-                case 233: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ValidateChallengeResponseFormatter();
+                case 4: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc1155ItemDTO>();
+                case 5: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc1155TokenDTO>();
+                case 6: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc20TokenDTO>();
+                case 7: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Erc721TokenDTO>();
+                case 8: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>();
+                case 9: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTO>();
+                case 10: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTO>();
+                case 11: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>();
+                case 12: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTO>();
+                case 13: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTO>();
+                case 14: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTO>();
+                case 15: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTO>();
+                case 16: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTO>();
+                case 17: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTO>();
+                case 18: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTO>();
+                case 19: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTO>();
+                case 20: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTO>();
+                case 21: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTO>();
+                case 22: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTO>();
+                case 23: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTO>();
+                case 24: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTO>();
+                case 25: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Cost>();
+                case 26: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155Reward>();
+                case 27: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Cost>();
+                case 28: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.Erc721Reward>();
+                case 29: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTO>();
+                case 30: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTO>();
+                case 31: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>();
+                case 32: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTO>();
+                case 33: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTO>();
+                case 34: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTO>();
+                case 35: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTO>();
+                case 36: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTO>();
+                case 37: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTO>();
+                case 38: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTO>();
+                case 39: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTO>();
+                case 40: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTO>();
+                case 41: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTO>();
+                case 42: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.RequestHandlerDTO>();
+                case 43: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.StoreDTO>();
+                case 44: return new global::MessagePack.Formatters.ListFormatter<global::HyperEdge.Shared.Protocol.Models.Web3AppDTO>();
+                case 45: return new global::MessagePack.Formatters.ListFormatter<global::System.Tuple<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>>();
+                case 46: return new global::MessagePack.Formatters.ListFormatter<string>();
+                case 47: return new global::MessagePack.Formatters.TupleFormatter<int, global::HyperEdge.Shared.Protocol.Models.Export.DataClassDTO>();
+                case 48: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddBattlePassRequestFormatter();
+                case 49: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddBattlePassResponseFormatter();
+                case 50: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddCraftRulesRequestFormatter();
+                case 51: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddCraftRulesResponseFormatter();
+                case 52: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddGameDataRequestFormatter();
+                case 53: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddGameDataResponseFormatter();
+                case 54: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddInventoryItemRequestFormatter();
+                case 55: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddInventoryItemResponseFormatter();
+                case 56: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc1155TokensRequestFormatter();
+                case 57: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc1155TokensResponseFormatter();
+                case 58: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc20TokensRequestFormatter();
+                case 59: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc20TokensResponseFormatter();
+                case 60: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc721TokensRequestFormatter();
+                case 61: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPackageErc721TokensResponseFormatter();
+                case 62: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPriceErc1155TokensRequestFormatter();
+                case 63: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddPriceErc1155TokensResponseFormatter();
+                case 64: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionLadderRequestFormatter();
+                case 65: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionLadderResponseFormatter();
+                case 66: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionRequestFormatter();
+                case 67: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddProgressionResponseFormatter();
+                case 68: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddQuestRequestFormatter();
+                case 69: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddQuestResponseFormatter();
+                case 70: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRequestHandlerRequestFormatter();
+                case 71: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRequestHandlerResponseFormatter();
+                case 72: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRewardRequestFormatter();
+                case 73: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRewardResponseFormatter();
+                case 74: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRulesRequestFormatter();
+                case 75: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddRulesResponseFormatter();
+                case 76: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddTournamentRequestFormatter();
+                case 77: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.AddTournamentResponseFormatter();
+                case 78: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.BuildAppRequestFormatter();
+                case 79: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.BuildAppResponseFormatter();
+                case 80: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.CreateAppEnvRequestFormatter();
+                case 81: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.CreateAppEnvResponseFormatter();
+                case 82: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.RunAppRequestFormatter();
+                case 83: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Apps.RunAppResponseFormatter();
+                case 84: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ChatMessageResponseFormatter();
+                case 85: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateApiKeyRequestFormatter();
+                case 86: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateApiKeyResponseFormatter();
+                case 87: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassContractRequestFormatter();
+                case 88: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassContractResponseFormatter();
+                case 89: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassItemRequestFormatter();
+                case 90: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateDataClassItemResponseFormatter();
+                case 91: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateEnergySystemRequestFormatter();
+                case 92: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateEnergySystemResponseFormatter();
+                case 93: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc1155TokenRequestFormatter();
+                case 94: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc1155TokenResponseFormatter();
+                case 95: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc20TokenRequestFormatter();
+                case 96: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc20TokenResponseFormatter();
+                case 97: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc721TokenRequestFormatter();
+                case 98: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateErc721TokenResponseFormatter();
+                case 99: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePackageRequestFormatter();
+                case 100: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePackageResponseFormatter();
+                case 101: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePriceRequestFormatter();
+                case 102: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreatePriceResponseFormatter();
+                case 103: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateStoreRequestFormatter();
+                case 104: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateStoreResponseFormatter();
+                case 105: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateWeb3AppRequestFormatter();
+                case 106: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.CreateWeb3AppResponseFormatter();
+                case 107: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeleteApiKeyRequestFormatter();
+                case 108: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeleteApiKeyResponseFormatter();
+                case 109: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeployContractRequestFormatter();
+                case 110: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.DeployContractResponseFormatter();
+                case 111: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Erc721DataDTOFormatter();
+                case 112: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ExportAppDefRequestFormatter();
+                case 113: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ExportAppDefResponseFormatter();
+                case 114: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetAccountRequestFormatter();
+                case 115: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetAccountResponseFormatter();
+                case 116: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetChallengeRequestFormatter();
+                case 117: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetChallengeResponseFormatter();
+                case 118: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractRequestFormatter();
+                case 119: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractResponseFormatter();
+                case 120: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractsRequestFormatter();
+                case 121: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassContractsResponseFormatter();
+                case 122: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassItemsRequestFormatter();
+                case 123: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetDataClassItemsResponseFormatter();
+                case 124: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokenRequestFormatter();
+                case 125: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokenResponseFormatter();
+                case 126: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokensRequestFormatter();
+                case 127: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc1155TokensResponseFormatter();
+                case 128: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokenRequestFormatter();
+                case 129: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokenResponseFormatter();
+                case 130: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokensRequestFormatter();
+                case 131: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc20TokensResponseFormatter();
+                case 132: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokenRequestFormatter();
+                case 133: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokenResponseFormatter();
+                case 134: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokensRequestFormatter();
+                case 135: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetErc721TokensResponseFormatter();
+                case 136: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetInventoryItemsRequestFormatter();
+                case 137: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetInventoryItemsResponseFormatter();
+                case 138: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetPackageRequestFormatter();
+                case 139: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetPackageResponseFormatter();
+                case 140: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRegisterAccountChallengeRequestFormatter();
+                case 141: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRequestHandlersRequestFormatter();
+                case 142: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetRequestHandlersResponseFormatter();
+                case 143: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoreRequestFormatter();
+                case 144: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoreResponseFormatter();
+                case 145: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoresRequestFormatter();
+                case 146: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetStoresResponseFormatter();
+                case 147: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppRequestFormatter();
+                case 148: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppResponseFormatter();
+                case 149: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppsRequestFormatter();
+                case 150: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.GetWeb3AppsResponseFormatter();
+                case 151: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.JoinChatRoomRequestFormatter();
+                case 152: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.AccountDTOFormatter();
+                case 153: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.AppEnvDTOFormatter();
+                case 154: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.ContractFieldDTOFormatter();
+                case 155: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassContractDataDTOFormatter();
+                case 156: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassContractDTOFormatter();
+                case 157: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassItemDataDTOFormatter();
+                case 158: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.DataClassItemDTOFormatter();
+                case 159: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc1155ItemDTOFormatter();
+                case 160: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc1155TokenDTOFormatter();
+                case 161: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc20TokenDTOFormatter();
+                case 162: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Erc721TokenDTOFormatter();
+                case 163: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.AppDefDTOFormatter();
+                case 164: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassDTOFormatter();
+                case 165: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassFieldDTOFormatter();
+                case 166: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassFieldsDTOFormatter();
+                case 167: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceDTOFormatter();
+                case 168: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTOFormatter();
+                case 169: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.EventHandlerDTOFormatter();
+                case 170: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.InventoryDefDTOFormatter();
+                case 171: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.InventoryDefItemDTOFormatter();
+                case 172: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.JobHandlerDTOFormatter();
+                case 173: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.ReqHandlerDTOFormatter();
+                case 174: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Export.UserGroupClassDTOFormatter();
+                case 175: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilityGraphDTOFormatter();
+                case 176: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilityNodeDTOFormatter();
+                case 177: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.AbilitySystemDTOFormatter();
+                case 178: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassDTOFormatter();
+                case 179: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.BattlePassInstanceDTOFormatter();
+                case 180: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.CostDTOFormatter();
+                case 181: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.CraftRulesDTOFormatter();
+                case 182: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.EnergySystemDTOFormatter();
+                case 183: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.EntityFieldInitDTOFormatter();
+                case 184: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155CostFormatter();
+                case 185: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc1155RewardFormatter();
+                case 186: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc721CostFormatter();
+                case 187: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.Erc721RewardFormatter();
+                case 188: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GameEntityDescriptionDTOFormatter();
+                case 189: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderDTOFormatter();
+                case 190: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTOFormatter();
+                case 191: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelaySystemDTOFormatter();
+                case 192: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MessageRelayTypeDTOFormatter();
+                case 193: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.MultiPlayerSystemDTOFormatter();
+                case 194: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityDTOFormatter();
+                case 195: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.NetEntityFieldDTOFormatter();
+                case 196: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.ProgressionSystemDTOFormatter();
+                case 197: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.QuestDTOFormatter();
+                case 198: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.RewardDTOFormatter();
+                case 199: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.TournamentDTOFormatter();
+                case 200: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics.TurnGameSystemDTOFormatter();
+                case 201: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageDTOFormatter();
+                case 202: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc1155TokensDTOFormatter();
+                case 203: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc20TokensDTOFormatter();
+                case 204: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PackageErc721TokensDTOFormatter();
+                case 205: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PriceDTOFormatter();
+                case 206: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.PriceErc1155TokensDTOFormatter();
+                case 207: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.RequestHandlerDTOFormatter();
+                case 208: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.StoreDTOFormatter();
+                case 209: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Web3AppDataDTOFormatter();
+                case 210: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Web3AppDTOFormatter();
+                case 211: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RegisterAccountRequestFormatter();
+                case 212: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RegisterAccountResponseFormatter();
+                case 213: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ReleaseAppDefRequestFormatter();
+                case 214: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ReleaseAppDefResponseFormatter();
+                case 215: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.RuleWorkflowsDTOFormatter();
+                case 216: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.SetPackagePriceRequestFormatter();
+                case 217: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.SetPackagePriceResponseFormatter();
+                case 218: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateAccountRequestFormatter();
+                case 219: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateAccountResponseFormatter();
+                case 220: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassItemRequestFormatter();
+                case 221: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassItemResponseFormatter();
+                case 222: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassRequestFormatter();
+                case 223: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateDataClassResponseFormatter();
+                case 224: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateErc721TokenRequestFormatter();
+                case 225: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateErc721TokenResponseFormatter();
+                case 226: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdatePackageRequestFormatter();
+                case 227: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdatePackageResponseFormatter();
+                case 228: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateStoreRequestFormatter();
+                case 229: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.UpdateStoreResponseFormatter();
+                case 230: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ValidateChallengeRequestFormatter();
+                case 231: return new MessagePack.Formatters.HyperEdge.Shared.Protocol.ValidateChallengeResponseFormatter();
                 default: return null;
             }
         }
@@ -8781,7 +8777,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models
             var formatterResolver = options.Resolver;
             writer.WriteMapHeader(1);
             writer.WriteRaw(GetSpan_Fields());
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
         }
 
         public global::HyperEdge.Shared.Protocol.Models.DataClassItemDataDTO Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -8808,7 +8804,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models
                     case 6:
                         if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 126875152509254UL) { goto FAIL; }
 
-                        ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
                         continue;
 
                 }
@@ -8926,69 +8922,6 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models
                                 continue;
 
                         }
-
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
-    public sealed class DataClassItemFieldDTOFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>
-    {
-        // Name
-        private static global::System.ReadOnlySpan<byte> GetSpan_Name() => new byte[1 + 4] { 164, 78, 97, 109, 101 };
-        // Value
-        private static global::System.ReadOnlySpan<byte> GetSpan_Value() => new byte[1 + 5] { 165, 86, 97, 108, 117, 101 };
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value is null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            var formatterResolver = options.Resolver;
-            writer.WriteMapHeader(2);
-            writer.WriteRaw(GetSpan_Name());
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Name, options);
-            writer.WriteRaw(GetSpan_Value());
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Value, options);
-        }
-
-        public global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            var formatterResolver = options.Resolver;
-            var length = reader.ReadMapHeader();
-            var ____result = new global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO();
-
-            for (int i = 0; i < length; i++)
-            {
-                var stringKey = global::MessagePack.Internal.CodeGenHelpers.ReadStringSpan(ref reader);
-                switch (stringKey.Length)
-                {
-                    default:
-                    FAIL:
-                      reader.Skip();
-                      continue;
-                    case 4:
-                        if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 1701667150UL) { goto FAIL; }
-
-                        ____result.Name = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
-                        continue;
-                    case 5:
-                        if (global::MessagePack.Internal.AutomataKeyGen.GetKey(ref stringKey) != 435761733974UL) { goto FAIL; }
-
-                        ____result.Value = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
-                        continue;
 
                 }
             }
@@ -12233,7 +12166,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics
             writer.WriteRaw(GetSpan_BattlePassName());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.BattlePassName, options);
             writer.WriteRaw(GetSpan_Fields());
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>>(formatterResolver).Serialize(ref writer, value.Fields, options);
             writer.WriteRaw(GetSpan_Levels());
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>>(formatterResolver).Serialize(ref writer, value.Levels, options);
         }
@@ -12284,7 +12217,7 @@ namespace MessagePack.Formatters.HyperEdge.Shared.Protocol.Models.Mechanics
                         {
                             default: goto FAIL;
                             case 126875152509254UL:
-                                ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.DataClassItemFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
+                                ____result.Fields = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Export.DataClassInstanceFieldDTO>>(formatterResolver).Deserialize(ref reader, options);
                                 continue;
                             case 126909395920204UL:
                                 ____result.Levels = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::HyperEdge.Shared.Protocol.Models.Mechanics.GenericLadderLevelDTO>>(formatterResolver).Deserialize(ref reader, options);
