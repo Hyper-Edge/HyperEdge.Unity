@@ -1,5 +1,6 @@
 ﻿using MessagePack;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -159,6 +160,21 @@ public class DatabaseTreeView : TreeView
                 if (newIdx != idx)
                 {
                     item.DataItem.Fields[column].Value = $"{instNameParts[0]}/{instNames[newIdx]}";
+                    _hasAnyChanges = true;
+                }
+            }
+            else if (fldDef.Typename == "GenericExpLadder")
+            {
+                var ladderNames = _appDef.Data.ProgressionLadders.Select(el => $"{el.ProgressionName}{el.Name}").ToList();
+                var menuItems = _appDef.Data.ProgressionLadders.Select(el => $"{el.ProgressionName}/{el.Name}").ToArray();
+                var instNameParts = colVal.Split('/');
+                var camelized = StringUtils.Camelize(instNameParts[1]);
+                var idx = ladderNames.FindIndex(v => v == camelized);
+                var newIdx = EditorGUI.Popup(r, idx, menuItems);
+                if (idx != newIdx)
+                {
+                    var newInstName = StringUtils.Underscore(ladderNames[newIdx]);
+                    item.DataItem.Fields[column].Value = $"GenericExpLadder/{newInstName}";
                     _hasAnyChanges = true;
                 }
             }
