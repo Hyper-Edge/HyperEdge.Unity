@@ -17,6 +17,7 @@ namespace HyperEdge.Sdk.Unity.EditorHelpers
     {
         private AppData? _appData = null;
         private AppDef? _appDef = null;
+        public Action<RewardDTO> Callback = null;
 
         private RewardEditHelper _rewardHelper = null;
         private RewardDTO _reward = null;
@@ -75,6 +76,14 @@ namespace HyperEdge.Sdk.Unity.EditorHelpers
             }
             //
             _rewardHelper.RenderGUI(renderNameField: true);
+            //
+            if (GUILayout.Button("Save"))
+            {
+                if (Callback is not null)
+                {
+                    Callback(_reward);
+                }
+            }
         }
     }
 }

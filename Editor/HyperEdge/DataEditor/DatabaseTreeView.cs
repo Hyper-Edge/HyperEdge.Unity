@@ -10,6 +10,8 @@ using UnityEditor.IMGUI.Controls;
 
 using HyperEdge.Shared.Protocol.Models;
 using HyperEdge.Shared.Protocol.Models.Export;
+using HyperEdge.Shared.Protocol.Models.Mechanics;
+using HyperEdge.Sdk.Unity.EditorHelpers;
 
 
 namespace HyperEdge.Sdk.Unity.DataEditor
@@ -163,6 +165,17 @@ public class DatabaseTreeView : TreeView
                     _hasAnyChanges = true;
                 }
             }
+            else if (fldDef.Typename == "Reward")
+            {
+                if (GUI.Button(r, "Edit"))
+                {
+                    var reward = string.IsNullOrEmpty(colVal) ? new RewardDTO() : JsonConvert.DeserializeObject<RewardDTO>(colVal);
+                    var wnd = EditorHelper.OpenRewardEditor(reward, r => {
+                        item.DataItem.Fields[column].Value = JsonConvert.SerializeObject(r);
+                        _hasAnyChanges = true;
+                    });
+                }
+            }
             else if (fldDef.Typename == "GenericExpLadder")
             {
                 var ladderNames = _appDef.Data.ProgressionLadders.Select(el => $"{el.ProgressionName}{el.Name}").ToList();
@@ -200,12 +213,6 @@ public class DatabaseTreeView : TreeView
         }
     }
 
-    protected override void BeforeRowsGUI()
-    {
-        _hasAnyChanges = false;
-    }
-
-
     protected override void AfterRowsGUI()
     {
         if (_hasAnyChanges)
@@ -213,6 +220,7 @@ public class DatabaseTreeView : TreeView
             var serializedInsts = MessagePackSerializer.Serialize(_instances);
             _dirty = !serializedInsts.SequenceEqual(_serializedInsts);
             Debug.Log($"Dirty: {_dirty}");
+            _hasAnyChanges = false;
         }
     }
 

@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using MessagePipe;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
-using System.Linq;
 
 using HyperEdge.Shared.Protocol.Models.Export;
+using HyperEdge.Shared.Protocol.Models.Mechanics;
 
 
 namespace HyperEdge.Sdk.Unity.DataEditor
@@ -18,6 +21,7 @@ public class DataEditorWindow : EditorWindow
 
     private AppData? _appData = null;
     private AppDef? _currentAppDef = null;
+    private IDisposable _bag = null;
 
     private Dictionary<string, DatabaseTreeView> _treeViews = new();
 
@@ -55,7 +59,16 @@ public class DataEditorWindow : EditorWindow
 	    }
     }
 
-    void CreateDisplayFrom(DataClassDTO type)
+    public void Destroy()
+    {
+        _bag?.Dispose();
+    }
+
+    private void OnRewardDataUpdated(RewardDTO r)
+    {
+    }
+
+    private void CreateDisplayFrom(DataClassDTO type)
     {
         if (type.Fields.Count == 0)
         {

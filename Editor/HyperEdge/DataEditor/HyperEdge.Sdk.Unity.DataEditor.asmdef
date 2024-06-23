@@ -6,7 +6,9 @@
 	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
 	    "HyperEdge.Sdk.Unity.EditorHelpers",
         "MessagePack",
-	    "Ulid"
+        "MessagePipe",
+	    "Ulid",
+        "UniTask"
     ],
     "includePlatforms": [
         "Editor"
