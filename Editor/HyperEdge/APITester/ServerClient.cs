@@ -1,9 +1,10 @@
-using Grpc.Core;
+using Grpc.Net.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using MagicOnion;
 using MagicOnion.Client;
+using MessagePack;
 using Newtonsoft.Json;
 using Cysharp.Threading.Tasks;
 using UnityEngine;

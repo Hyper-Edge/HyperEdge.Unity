@@ -3,6 +3,7 @@
     "rootNamespace": "HyperEdge.Sdk.Shared",
     "references": [
 	"MagicOnion.Abstractions",
+	"MagicOnion.Client",
 	"MagicOnion.Unity",
 	"MessagePack",
 	"MessagePack.Annotations",

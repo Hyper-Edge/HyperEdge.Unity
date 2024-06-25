@@ -54,8 +54,8 @@ class HeApp:
         send_to_unity('PyRelease', resp.dict())
 
     def build_app_version(self, version_name: str, do_build: bool):
-        if not self._app_manifest.has_version(version_name):
-            raise Exception(f"Unknown version: {version_name}")
+        #if not self._app_manifest.has_version(version_name):
+        #    raise Exception(f"Unknown version: {version_name}")
         resp = self._client.build_app_version(
             self._app_manifest.Id, version_name, do_build)
         #

@@ -4,7 +4,6 @@
 using System;
 using System.Globalization;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Text;
 
 #pragma warning disable SA1649 // File name should match first type name
@@ -40,16 +39,10 @@ namespace MessagePack
         String,
     }
 
-    [Serializable]
     public class TinyJsonException : MessagePackSerializationException
     {
         public TinyJsonException(string message)
             : base(message)
-        {
-        }
-
-        protected TinyJsonException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

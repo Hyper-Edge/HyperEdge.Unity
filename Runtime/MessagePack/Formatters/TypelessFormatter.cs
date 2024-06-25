@@ -202,7 +202,7 @@ namespace MessagePack.Formatters
             }
 
             // mark will be written at the end, when size is known
-            using (var scratchRental = options.SequencePool.Rent())
+            using (var scratchRental = SequencePool.Shared.Rent())
             {
                 MessagePackWriter scratchWriter = writer.Clone(scratchRental.Value);
                 scratchWriter.WriteString(typeName);

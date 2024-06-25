@@ -10,7 +10,7 @@
 import { registerLanguage } from "../_.contribution.js";
 registerLanguage({
   id: "csharp",
-  extensions: [".cs", ".csx", ".cake"],
+  extensions: [".cs", ".csx", ".cake", ".hcs"],
   aliases: ["C#", "csharp"],
   loader: () => {
     if (false) {

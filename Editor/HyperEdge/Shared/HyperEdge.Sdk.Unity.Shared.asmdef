@@ -2,8 +2,10 @@
     "name": "HyperEdge.Sdk.Unity.Shared",
     "rootNamespace": "HyperEdge.Sdk.Unity",
     "references": [
+        "HyperEdge.Sdk.Shared",
 	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
 	    "Ulid",
+        "Cysharp.Net.Http.YetAnotherHttpHandler",
         "MagicOnion.Unity",
         "MessagePack",
         "MessagePipe",

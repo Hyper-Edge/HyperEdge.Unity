@@ -346,7 +346,7 @@ namespace MessagePack.Formatters
                     }
                     else
                     {
-                        using (var scratchRental = options.SequencePool.Rent())
+                        using (var scratchRental = SequencePool.Shared.Rent())
                         {
                             var scratch = scratchRental.Value;
                             MessagePackWriter scratchWriter = writer.Clone(scratch);
@@ -461,25 +461,6 @@ namespace MessagePack.Formatters
         protected override void Add(TCollection collection, int index, TElement value, MessagePackSerializerOptions options)
         {
             collection.Add(value);
-        }
-    }
-
-    public sealed class GenericEnumerableFormatter<TElement, TCollection> : CollectionFormatterBase<TElement, TElement[], TCollection>
-        where TCollection : IEnumerable<TElement>
-    {
-        protected override TElement[] Create(int count, MessagePackSerializerOptions options)
-        {
-            return new TElement[count];
-        }
-
-        protected override void Add(TElement[] collection, int index, TElement value, MessagePackSerializerOptions options)
-        {
-            collection[index] = value;
-        }
-
-        protected override TCollection Complete(TElement[] intermediateCollection)
-        {
-            return (TCollection)Activator.CreateInstance(typeof(TCollection), intermediateCollection);
         }
     }
 
@@ -969,7 +950,7 @@ namespace MessagePack.Formatters
 
             IMessagePackFormatter<object> formatter = options.Resolver.GetFormatterWithVerify<object>();
 
-            using (var scratchRental = options.SequencePool.Rent())
+            using (var scratchRental = SequencePool.Shared.Rent())
             {
                 var scratch = scratchRental.Value;
                 MessagePackWriter scratchWriter = writer.Clone(scratch);
@@ -1289,28 +1270,6 @@ namespace MessagePack.Formatters
             return new HashSet<T>(options.Security.GetEqualityComparer<T>());
         }
     }
-
-#if NET5_0_OR_GREATER
-
-    public sealed class InterfaceReadOnlySetFormatter<T> : CollectionFormatterBase<T, HashSet<T>, IReadOnlySet<T>>
-    {
-        protected override void Add(HashSet<T> collection, int index, T value, MessagePackSerializerOptions options)
-        {
-            collection.Add(value);
-        }
-
-        protected override IReadOnlySet<T> Complete(HashSet<T> intermediateCollection)
-        {
-            return intermediateCollection;
-        }
-
-        protected override HashSet<T> Create(int count, MessagePackSerializerOptions options)
-        {
-            return new HashSet<T>(options.Security.GetEqualityComparer<T>());
-        }
-    }
-
-#endif
 
     public sealed class ConcurrentBagFormatter<T> : CollectionFormatterBase<T, System.Collections.Concurrent.ConcurrentBag<T>>
     {
