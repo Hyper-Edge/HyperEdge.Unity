@@ -6,6 +6,7 @@ using MagicOnion;
 using MagicOnion.Client;
 using MessagePack;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -84,6 +85,11 @@ namespace HyperEdge.Sdk.Unity.APITester
                 EnvId = _serverInfo.EnvId,
                 Healthy = resp.Healthy
             });
+        }
+
+        public UniTask<string> CallServerHandler(string handlerName, JObject data)
+        {
+            return CallWebGateway($"IGameService/{handlerName}", JsonConvert.SerializeObject(data));
         }
 
         public UniTask<string> GetCurrentUserAsync()

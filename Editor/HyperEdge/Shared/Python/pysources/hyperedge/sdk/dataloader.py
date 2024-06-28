@@ -18,6 +18,8 @@ def datainst_to_json(cls, data_inst):
             continue
         t_origin = typing.get_origin(fdef.outer_type_)
         fval = getattr(data_inst, fname)
+        if isinstance(fval, Reward):
+            fval = json.dumps(fval.to_dict())
         if t_origin is list:
             fval = json.dumps(fval)
         flds.append({'Name': fname, 'Value': fval})

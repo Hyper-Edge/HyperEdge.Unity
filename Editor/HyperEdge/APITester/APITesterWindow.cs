@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MessagePipe;
+using Newtonsoft.Json.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
@@ -33,6 +34,8 @@ namespace HyperEdge.Sdk.Unity.APITester
         private int _itemsAmount;
 
         private int _selectedUserIdx = 0;
+
+        private Dictionary<string, JObject> _callData = new(); 
 
         private enum TabIndices
         {
@@ -264,15 +267,23 @@ namespace HyperEdge.Sdk.Unity.APITester
             {
                 return;
             }
+            if (!_callData.TryGetValue(reqHandlerData.Name, out var callData))
+            {
+                callData = new JObject();
+                _callData[reqHandlerData.Name] = callData;
+            }
             foreach (var fldData in reqClassData.Fields)
 	        {
          	    EditorGUILayout.LabelField(fldData.Name + ":");
-                EditorGUILayout.TextField("");
+                var fldVal = EditorGUILayout.TextField(callData[fldData.Name]?.Value<string>() ?? "");
+                callData[fldData.Name] = fldVal;
             }
 	        EditorGUILayout.Space();
             //
             if (GUILayout.Button("Send"))
             {
+                var serverInfo = _serverList[_selectedServerIdx];
+                _serverClients[serverInfo.ServerId].CallServerHandler(reqHandlerData.Name, callData);
             }
         }
 
