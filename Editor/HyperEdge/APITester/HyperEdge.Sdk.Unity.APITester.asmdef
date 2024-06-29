@@ -14,7 +14,8 @@
         "UniTask.Editor",
         "HyperEdge.Sdk.Shared",
 	    "HyperEdge.Sdk.Unity.Shared",
-	    "HyperEdge.Sdk.Unity.HyperEdgeClient"
+	    "HyperEdge.Sdk.Unity.HyperEdgeClient",
+	    "HyperEdge.Sdk.Unity.EditorHelpers"
     ],
     "includePlatforms": [
         "Editor"

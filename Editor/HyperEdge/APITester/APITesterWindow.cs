@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MessagePipe;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -236,7 +237,8 @@ namespace HyperEdge.Sdk.Unity.APITester
         {
             var serverClient = _serverClients[serverInfo.ServerId];
             var userData = await serverClient.GetCurrentUserAsync();
-            Debug.Log(userData);
+            var jObj = JsonConvert.DeserializeObject<JObject>(userData);
+            JsonPopupWindow.ShowWindow($"User {userId}", jObj["User"].ToObject<JObject>());
         }
 
         private async UniTaskVoid CreateNewAccount(ServerInfo serverInfo, LocalAccountRepo userRepo)
