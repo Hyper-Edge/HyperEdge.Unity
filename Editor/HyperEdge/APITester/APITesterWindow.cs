@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using MessagePipe;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -22,6 +23,9 @@ namespace HyperEdge.Sdk.Unity.APITester
         private IDisposable _bag = null;
         private List<ServerInfo> _serverList = new();
         private int _selectedServerIdx = 0;
+        private bool _isServerHealthy = false;
+
+        private CancellationTokenSource _cts = new();
 
         private int _selectedAppVersionIdx = -1;
 	    private int _selectedReqHandlerIdx = 0;
@@ -71,6 +75,27 @@ namespace HyperEdge.Sdk.Unity.APITester
             {
                 GetAppContainers();
             }
+            StartHealthCheckLoop();
+        }
+
+        private void StartHealthCheckLoop()
+        {
+            UniTask.Create(async () => {
+                while (true) {
+                    if (_cts.Token.IsCancellationRequested) {
+                        break;
+                    }
+                    if (_selectedServerIdx >= _serverList.Count)
+                    {
+                        await UniTask.Delay(1000, cancellationToken: _cts.Token);
+                        continue;
+                    }
+                    var serverInfo = _serverList[_selectedServerIdx];
+                    var serverClient = _serverClients[serverInfo.ServerId];
+                    await serverClient.CheckHealthAsync();
+                    await UniTask.Delay(10000, cancellationToken: _cts.Token);
+                }
+            });
         }
 
         private void InitCallbacks()
@@ -107,6 +132,7 @@ namespace HyperEdge.Sdk.Unity.APITester
                 }).AddTo(d);
                 //
                 MessageHub.Instance.OnServerHealthInfo.Subscribe(msg => {
+                    _isServerHealthy = msg.Healthy;
                     Debug.Log($"Is Healthy: {msg.Healthy}");
                 }).AddTo(d);
                 _bag = d.Build();
@@ -117,12 +143,10 @@ namespace HyperEdge.Sdk.Unity.APITester
             }
         }
 
-        public void Destroy()
+        public void OnDestroy()
         {
-            if (_bag is not null)
-            {
-                _bag.Dispose();
-            }
+            _cts?.Cancel();
+            _bag?.Dispose();
         }
 
         private void GetAppContainers()
@@ -154,6 +178,7 @@ namespace HyperEdge.Sdk.Unity.APITester
                 _appDef = AppDefCache.Instance.GetAppDef(_appData.Name, serverInfo.VersionName);
             }
             EditorGUILayout.LabelField($"Running Server version={_serverList[_selectedServerIdx].VersionName}");
+            EditorGUILayout.LabelField($"Server health: {_isServerHealthy}");
             //
             _toolbarIdx = GUILayout.Toolbar(_toolbarIdx, _toolbarStrings);
 	        if (_toolbarIdx == (int)TabIndices.USERS_TAB_IDX)
@@ -191,6 +216,8 @@ namespace HyperEdge.Sdk.Unity.APITester
         private void OnUsersView()
         {
             var serverInfo = _serverList[_selectedServerIdx];
+            var serverClient = _serverClients[serverInfo.ServerId];
+            var loggedIn = serverClient.Account is not null;
             var userRepo = GetLocalAccountRepo(serverInfo.EnvId);
             //
             var userIds = userRepo.Accounts.Select(x => x.UserId).ToArray();
@@ -203,7 +230,7 @@ namespace HyperEdge.Sdk.Unity.APITester
             {
                 SwitchToAccount(userIds[_selectedUserIdx], serverInfo, userRepo).Forget();
             }
-            if (GUILayout.Button("Show"))
+            if (loggedIn && GUILayout.Button("Show"))
             {
                 ShowUser(userIds[_selectedUserIdx], serverInfo, userRepo).Forget();
             }
@@ -211,11 +238,6 @@ namespace HyperEdge.Sdk.Unity.APITester
             if (GUILayout.Button("New User"))
             {
                 CreateNewAccount(serverInfo, userRepo).Forget();
-            }
-            //
-            if (GUILayout.Button("Check Health"))
-            {
-                _serverClients[serverInfo.ServerId].CheckHealth();
             }
             //
             if (GUILayout.Button("Fetch users"))

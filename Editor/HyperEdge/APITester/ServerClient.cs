@@ -27,6 +27,7 @@ namespace HyperEdge.Sdk.Unity.APITester
         private readonly GrpcChannelx _channel;
 
         private AccountData? _accData = null;
+        public AccountData? Account { get => _accData; }
 
         public ServerClient(ServerInfo serverInfo)
         {
@@ -63,7 +64,7 @@ namespace HyperEdge.Sdk.Unity.APITester
             CheckHealthAsync().Forget();
         }
 
-        public async UniTaskVoid CheckHealthAsync()
+        public async UniTask CheckHealthAsync()
         {
             var resp = await GetHealthService().CheckHealth();
             MessageHub.Instance.PublishServerHealthInfo(new OnServerHealthInfoMsg
