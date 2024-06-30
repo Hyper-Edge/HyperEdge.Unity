@@ -98,6 +98,12 @@ namespace HyperEdge.Sdk.Unity.APITester
             return CallWebGateway("IGameService/GetCurrentUser", "");
         }
 
+        public UniTask<string> AddBattlePassScore(string bpId, long pts)
+        {
+            return CallWebGateway($"ITestService/AddBattlePassScore",
+                $"{{\"BpId\": \"{bpId}\", \"Score\": {pts}}}");
+        }
+
         public UniTask<string> AddItems(string itemId, ulong amount)
         {
             return CallWebGateway($"ITestService/AddItems",

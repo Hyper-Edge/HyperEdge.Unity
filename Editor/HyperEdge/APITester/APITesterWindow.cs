@@ -38,6 +38,9 @@ namespace HyperEdge.Sdk.Unity.APITester
         private int _selectedItemIdx = 0;
         private int _itemsAmount;
 
+        private string _bpId = string.Empty;
+        private long _bpPoints = 0;
+
         private int _selectedUserIdx = 0;
 
         private Dictionary<string, JObject> _callData = new(); 
@@ -49,6 +52,7 @@ namespace HyperEdge.Sdk.Unity.APITester
             JOB_HANDLERS_TAB_IDX,
             MODELS_TAB_IDX,
             ITEMS_TAB_IDX,
+            GM_TAB_IDX,
         };
 
         private int _toolbarIdx = 0;
@@ -57,7 +61,8 @@ namespace HyperEdge.Sdk.Unity.APITester
             "Requests",
 	        "Jobs",
             "Models",
-            "Items"
+            "Items",
+            "Mechanics"
         };
 
         [MenuItem("HyperEdge/APITester")]
@@ -200,6 +205,10 @@ namespace HyperEdge.Sdk.Unity.APITester
             else if (_toolbarIdx == (int)TabIndices.ITEMS_TAB_IDX)
             {
                 OnItemsView();
+            }
+            else if (_toolbarIdx == (int)TabIndices.GM_TAB_IDX)
+            {
+                OnMechanicsView();
             }
 	    }
 
@@ -421,6 +430,24 @@ namespace HyperEdge.Sdk.Unity.APITester
                 _serverClients[serverInfo.ServerId].AddItems(
                     dci.Id.ToString(),
                     (ulong)_itemsAmount).Forget();
+            }
+        }
+
+        private void OnMechanicsView()
+        {
+            var serverInfo = _serverList[_selectedServerIdx];
+            var serverClient = _serverClients[serverInfo.ServerId];
+            //
+            EditorGUILayout.LabelField("Add BattlePass points");
+            //
+            EditorGUILayout.LabelField("BattlePass Id:");
+            _bpId = EditorGUILayout.TextField(_bpId);
+            EditorGUILayout.LabelField("Points:");
+            _bpPoints = EditorGUILayout.IntField((int)_bpPoints);
+            //
+            if (GUILayout.Button("Add BattlePass Points"))
+            {
+                serverClient.AddBattlePassScore(_bpId, _bpPoints).Forget();
             }
         }
     }
