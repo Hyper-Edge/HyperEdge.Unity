@@ -145,8 +145,8 @@ class BattlePassInstanceDTO(pydantic.BaseModel):
 
 class QuestDTO(pydantic.BaseModel):
     Name: str
-    AcceptConditions: typing.List[str]
-    FinishConditions: typing.List[str]
+    AcceptConditions: typing.Optional[typing.List[str]]
+    FinishConditions: typing.Optional[typing.List[str]]
     ModelUid: typing.Optional[str]
     Model: DataClassFieldsDTO
     DataUid: typing.Optional[str]

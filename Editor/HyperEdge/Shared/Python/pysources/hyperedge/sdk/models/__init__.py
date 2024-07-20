@@ -9,7 +9,7 @@ from .reward import Reward
 from .cost import Cost
 from .battle_pass import BattlePass, BattlePassInstance
 from .progression import ProgressionLadder, GenericLadderBase, GenericLadder, GenericExpLadder
-from .quest import Quest
+from .quest import Quest, GenericQuestData
 from .energy_system import EnergySystem, GenericEnergySystemData
 from .crafting import CraftRule
 from .storage import \
